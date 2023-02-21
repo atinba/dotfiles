@@ -1,0 +1,18 @@
+switchHM() {
+  home-manager switch --flake ~/.dotfiles#ab
+}
+
+switchSys() {
+  sudo nixos-rebuild switch --flake ~/.dotfiles#laptop
+}
+
+git add -A
+case $1 in
+  "hm")
+    switchHM;;
+  "sys")
+    switchSys;;
+  *)
+    switchHM && switchSys;;
+esac
+
