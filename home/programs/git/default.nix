@@ -20,6 +20,7 @@ in
 
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     aliases = {
       loc = "!f(){ git ls-files | ${rg} \"\\.\${1}\" | xargs wc -l;};f";
       br = "branch";
