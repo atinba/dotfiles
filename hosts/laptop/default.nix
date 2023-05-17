@@ -2,14 +2,12 @@
 
 {
   imports = [
-    ../../modules/xserver
-    ../../modules/pipewire
-    ../../modules/networkmanager
-    ../../modules/dokuwiki
+    ../../system/xserver
+    ../../system/pipewire
+    ../../system/networkmanager
+    ../../system/dokuwiki
 
-
-    ../../../modules/system/virt/gaming-kvm/kvm.nix
-    ../../../modules/system/services/syncthing
+    ../../system/syncthing
 
     ./hardware-configuration.nix
   ];
@@ -19,12 +17,6 @@
 
   networking.hostName = "nixos";
   system.stateVersion = "22.11";
-
-  virtualisation.gaming-kvm = {
-    enable = true;
-    iommu_type = "intel";
-    gpu_pci_ids = [ "10de:1f92" "10de:10fa" ];
-  };
 
   boot = {
     loader = {

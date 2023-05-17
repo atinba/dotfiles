@@ -3,10 +3,13 @@ switchHM() {
 }
 
 switchSys() {
-  sudo nixos-rebuild switch --flake ~/.dotfiles#laptop
+  sudo nixos-rebuild switch --install-bootloader --flake ~/.dotfiles#laptop
 }
 
+nix flake update
 git add -A
+nix fmt
+
 case $1 in
   "hm")
     switchHM;;

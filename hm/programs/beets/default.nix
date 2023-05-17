@@ -4,7 +4,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      "directory"= "~/media/beets";
+      "directory" = "~/media/beets";
     };
   };
 }

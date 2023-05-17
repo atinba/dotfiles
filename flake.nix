@@ -23,7 +23,7 @@
       homeConfigurations = {
         ab = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home/home.nix ];
+          modules = [ ./hm/home.nix ];
         };
       };
 
@@ -32,8 +32,8 @@
           inherit pkgs;
 
           modules = [
-            ./system/hosts/laptop
-            ./system/configuration.nix
+            ./hosts/laptop
+            ./hosts/system.nix
           ];
         };
 
@@ -41,8 +41,8 @@
           inherit pkgs;
 
           modules = [
-            ./system/hosts/server
-            ./system/configuration.nix
+            ./hosts/server
+            ./hosts/system.nix
           ];
         };
       };

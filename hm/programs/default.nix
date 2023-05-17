@@ -14,6 +14,7 @@ in
   ./git
   ./nvim
   ./beets
+  ./shells
   misc
 ]
 ++ (import ./browsers)

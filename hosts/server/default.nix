@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../modules/xserver
-    ../../modules/networkmanager
-    ../../modules/ssh
+    ../../system/xserver
+    ../../system/networkmanager
+    ../../system/ssh
 
     ./hardware-configuration.nix
   ];
