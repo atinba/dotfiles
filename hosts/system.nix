@@ -7,6 +7,11 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  fonts.fonts = with pkgs; [
+    jetbrains-mono
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   nix = {
     gc = {
       automatic = true;

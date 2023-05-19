@@ -3,11 +3,12 @@
 {
   imports = [
     ../../system/xserver
-    ../../system/pipewire
+    ../../system/services/pipewire
     ../../system/networkmanager
-    ../../system/dokuwiki
 
-    ../../system/syncthing
+    #../../system/services/dokuwiki
+    ../../system/services/syncthing
+    ../../system/services/nextcloud
 
     ./hardware-configuration.nix
   ];
