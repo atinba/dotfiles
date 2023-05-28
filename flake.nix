@@ -23,6 +23,7 @@
       };
 
       fmt = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+      common_system_module = ./hosts/common.nix;
     in
     {
       formatter.x86_64-linux = fmt;
@@ -42,7 +43,7 @@
 
           modules = [
             ./hosts/laptop
-            ./hosts/system.nix
+            common_system_module
           ];
         };
 
@@ -51,7 +52,7 @@
 
           modules = [
             ./hosts/server
-            ./hosts/system.nix
+            common_system_module
           ];
         };
       };

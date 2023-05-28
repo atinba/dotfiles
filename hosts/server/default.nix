@@ -4,8 +4,9 @@
   imports = [
     ../../system/xserver
     ../../system/networkmanager
-    ../../system/ssh
 
+    ../../system/services/ssh
+    ../../system/services/nextcloud
     ./hardware-configuration.nix
   ];
 

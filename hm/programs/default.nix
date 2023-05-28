@@ -15,6 +15,7 @@ in
   ./nvim
   ./beets
   ./shells
+  ./xmonad
   misc
 ]
 ++ (import ./browsers)

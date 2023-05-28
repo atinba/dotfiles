@@ -9,6 +9,7 @@
     #../../system/services/dokuwiki
     ../../system/services/syncthing
     ../../system/services/nextcloud
+    ../../system/services/ssh
 
     ./hardware-configuration.nix
   ];
