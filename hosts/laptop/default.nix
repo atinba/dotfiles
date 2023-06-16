@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, specialArgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,10 @@
 
     ./hardware-configuration.nix
   ];
+
+  environment.variables = {
+    SYSTEM_CONFIG_NAME = specialArgs.system_config_name;
+  };
 
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_IN";
