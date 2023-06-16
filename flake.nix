@@ -17,10 +17,6 @@
         inherit system;
         config = { allowUnfree = true; };
       };
-      nur = import nurpkgs {
-        inherit pkgs;
-        nurpkgs = pkgs;
-      };
 
       fmt = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       common_system_module = ./hosts/common.nix;
@@ -30,9 +26,6 @@
       homeConfigurations = {
         ab = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = {
-            addons = nur.repos.rycee.firefox-addons;
-          };
           modules = [ ./hm/home.nix ];
         };
       };
@@ -45,6 +38,10 @@
             ./hosts/laptop
             common_system_module
           ];
+
+          specialArgs = {
+            system_config_name = "laptop";
+          };
         };
 
         server = nixpkgs.lib.nixosSystem {
