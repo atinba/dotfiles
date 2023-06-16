@@ -8,6 +8,13 @@
     };
     extraAppsEnable = true;
     hostName = "localhost";
-    config.adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
+    config = {
+      adminpassFile = "${pkgs.writeText "adminpass" "test123"}";
+      extraTrustedDomains = [
+        "10.42.0.1"
+        "192.168.80.237"
+        "192.168.80.37"
+      ];
+    };
   };
 }
