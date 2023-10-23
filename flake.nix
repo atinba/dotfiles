@@ -19,7 +19,6 @@
       };
 
       fmt = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
-      common_system_module = ./hosts/common.nix;
     in
     {
       formatter.x86_64-linux = fmt;
@@ -35,21 +34,7 @@
           inherit pkgs;
 
           modules = [
-            ./hosts/laptop
-            common_system_module
-          ];
-
-          specialArgs = {
-            system_config_name = "laptop";
-          };
-        };
-
-        server = nixpkgs.lib.nixosSystem {
-          inherit pkgs;
-
-          modules = [
-            ./hosts/server
-            common_system_module
+            ./system/default.nix
           ];
         };
       };

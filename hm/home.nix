@@ -4,7 +4,7 @@ let
   username = "atin";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
-  stateVersion = "22.11";
+  stateVersion = "23.05";
 
 in
 {
@@ -20,17 +20,13 @@ in
 
     packages = with pkgs; [
       bat
-      broot
       element-desktop
       fzf
       htop
-      jq
       keepassxc
       mpv
       pavucontrol
-      signal-desktop
       zathura
-      zoxide
     ];
 
     sessionVariables = {

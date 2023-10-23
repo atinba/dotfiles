@@ -13,11 +13,11 @@ usage() {
 }
 
 switchHM() {
-  home-manager switch --flake ~/.dotfiles#ab
+  home-manager switch --flake /home/atin/.dotfiles#ab
 }
 
 switchSys() {
-  sudo nixos-rebuild switch --install-bootloader --flake ~/.dotfiles#"$SYSTEM_CONFIG_NAME"
+  sudo nixos-rebuild switch --install-bootloader --flake /home/atin/.dotfiles#laptop
 }
 
 

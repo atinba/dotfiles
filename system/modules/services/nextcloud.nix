@@ -2,7 +2,7 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud26;
+    package = pkgs.nextcloud27;
     extraApps = with pkgs.nextcloud26Packages.apps; {
       inherit bookmarks calendar contacts deck keeweb mail news notes onlyoffice polls tasks;
     };
