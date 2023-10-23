@@ -36,11 +36,14 @@ myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
 
 myScratchPads = [ NS "pavucontrol" "pavucontrol" findPavu managePavu
                 , NS "keepassxc" "keepassxc" findKeepass manageKeepass
+                , NS "term" "alacritty --class termpad" findTerm manageTerm
                 ] where
     findPavu = className =? "Pavucontrol"
     managePavu = customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4)
-    findKeepass = title =? "KeePassXC"
+    findKeepass = className =? "KeePassXC"
     manageKeepass = customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4) 
+    findTerm = className =? "termpad"
+    manageTerm = customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4) 
 
 -- myHandleEventHook :: Event -> X All
 -- myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "KeePassXC" --> floating)
@@ -80,9 +83,11 @@ myKeys = [
     ("M-g", windowPrompt def Bring allWindows),
 
     ("M-v", namedScratchpadAction myScratchPads "pavucontrol"),
+    ("M-t", namedScratchpadAction myScratchPads "term"),
+    ("M-p", namedScratchpadAction myScratchPads "keepassxc"),
 
     ("M-c", spawn "setxkbmap -v | grep colemak_dh && setxkbmap us || setxkbmap us -variant colemak_dh"),
-    ("M-p", spawn "rofi -show run")
+    ("M-r", spawn "rofi -show run")
     ]
 
 

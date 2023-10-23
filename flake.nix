@@ -32,10 +32,7 @@
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-
-          modules = [
-            ./system/default.nix
-          ];
+          modules = [ ./system/default.nix ];
         };
       };
     };

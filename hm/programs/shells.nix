@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.exa = {
+  programs.eza = {
     enable = true;
     git = true;
     icons = true;
@@ -13,10 +13,10 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
-      ls = "exa -l";
-      ll = "exa -la";
-      la = "exa -a";
-      lt = "exa --tree";
+      ls = "eza -l";
+      ll = "eza -la";
+      la = "eza -a";
+      lt = "eza --tree";
       ".." = "cd ..";
     };
   };

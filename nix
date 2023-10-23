@@ -20,16 +20,14 @@ switchSys() {
   sudo nixos-rebuild switch --install-bootloader --flake /home/atin/.dotfiles#laptop
 }
 
-
-git add -A
-nix fmt
-
-
 if [ $# -eq 0 ]; then
     echo "Error: No command provided."
     usage
     exit 1
 fi
+
+git add -A
+nix fmt
 
 case "$1" in
     f)

@@ -2,10 +2,12 @@
 
 {
   imports = [
-    ./modules/system/xserver
-    ./modules/system/services/pipewire
-    ./modules/system/networkmanager
-    ./modules/system/services/ssh
+    ./modules/xserver.nix
+    ./modules/networkmanager.nix
+    ./modules/vbox.nix
+
+    ./modules/services/pipewire.nix
+    ./modules/services/ssh.nix
 
     ./hardware-configuration.nix
   ];

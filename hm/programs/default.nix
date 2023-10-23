@@ -11,10 +11,10 @@ let
 
 in
 [
-  ./git
-  ./nvim
-  ./beets
-  ./shells
+  ./git.nix
+  ./nvim.nix
+  ./beets.nix
+  ./shells.nix
   ./xmonad
   misc
 ]
