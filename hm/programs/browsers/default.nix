@@ -1,4 +1,0 @@
-[
-  #  ./firefox.nix
-  ./librewolf.nix
-]

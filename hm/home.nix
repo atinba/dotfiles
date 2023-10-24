@@ -6,14 +6,39 @@ let
   configHome = "${homeDirectory}/.config";
   stateVersion = "23.05";
 
+  toPath = x: y: ./. + "/${x}/${y}";
+
+  imports = map (toPath "programs") [
+    "bash.nix"
+    "beets.nix"
+    "git.nix"
+    "librewolf.nix"
+    "nvim.nix"
+
+    "xmonad"
+  ] ++ map (toPath "services") [
+    "redshift.nix"
+    "polybar"
+  ];
+
 in
 {
-  programs.home-manager.enable = true;
+  inherit imports;
+  programs = {
+    home-manager.enable = true;
+    gpg.enable = true;
+    ssh.enable = true;
+    alacritty.enable = true;
+  };
 
-  imports = builtins.concatMap import [
-    ./programs
-    ./services
-  ];
+  services = {
+    flameshot.enable = true;
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      pinentryFlavor = "tty";
+    };
+  };
 
   home = {
     inherit username homeDirectory stateVersion;

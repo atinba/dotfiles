@@ -13,11 +13,11 @@ usage() {
 }
 
 switchHM() {
-  home-manager switch --flake /home/atin/.dotfiles#ab
+  home-manager switch --show-trace --flake /home/atin/.dotfiles#ab
 }
 
 switchSys() {
-  sudo nixos-rebuild switch --install-bootloader --flake /home/atin/.dotfiles#laptop
+  sudo nixos-rebuild switch --show-trace --install-bootloader --flake /home/atin/.dotfiles#laptop
 }
 
 if [ $# -eq 0 ]; then
