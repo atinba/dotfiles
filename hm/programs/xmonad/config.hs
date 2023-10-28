@@ -13,6 +13,7 @@ import XMonad.Actions.CopyWindow (kill1)
 import XMonad.Prompt
 import XMonad.Prompt.Window
 import XMonad.Util.NamedScratchpad
+import XMonad.Actions.SinkAll
 import System.Exit (exitSuccess)
 import Data.Semigroup
 import XMonad.Hooks.DynamicProperty
@@ -81,6 +82,7 @@ myKeys = [
     ("M-S-c", kill1),
     ("M-w", goToSelected def),
     ("M-g", windowPrompt def Bring allWindows),
+    ("M-S-f", sinkAll),
 
     ("M-v", namedScratchpadAction myScratchPads "pavucontrol"),
     ("M-t", namedScratchpadAction myScratchPads "term"),

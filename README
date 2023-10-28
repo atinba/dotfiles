@@ -8,3 +8,4 @@
   - add hashed pwd etc
 - change programs and services structure in hm
 - manage hm with nixos-rebuild
+- add librewolf opts in nix config

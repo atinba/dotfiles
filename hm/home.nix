@@ -10,7 +10,7 @@ let
 
   imports = map (toPath "programs") [
     "bash.nix"
-    "beets.nix"
+    #"beets.nix"
     "git.nix"
     "librewolf.nix"
     "nvim.nix"
