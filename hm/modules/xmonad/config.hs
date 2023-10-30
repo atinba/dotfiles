@@ -17,7 +17,6 @@ import XMonad.Actions.SinkAll
 import System.Exit (exitSuccess)
 import Data.Semigroup
 import XMonad.Hooks.DynamicProperty
-    -- Data
 import Data.Char (isSpace, toUpper)
 import Data.Maybe (fromJust)
 import Data.Monoid
@@ -35,6 +34,7 @@ myVim       = myTerminal ++ " -e nvim"
 myWorkspaces = [ "dev", "www", "chat", "media", "5", "6", "7", "8", "9"]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..]
 
+-- INFO: use className, title doesn't work well
 myScratchPads = [ NS "pavucontrol" "pavucontrol" findPavu managePavu
                 , NS "keepassxc" "keepassxc" findKeepass manageKeepass
                 , NS "term" "alacritty --class termpad" findTerm manageTerm
@@ -45,9 +45,6 @@ myScratchPads = [ NS "pavucontrol" "pavucontrol" findPavu managePavu
     manageKeepass = customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4) 
     findTerm = className =? "termpad"
     manageTerm = customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4) 
-
--- myHandleEventHook :: Event -> X All
--- myHandleEventHook = dynamicPropertyChange "WM_NAME" (title =? "KeePassXC" --> floating)
         where floating = customFloating $ W.RationalRect (1/6) (1/6) (2/3) (2/3)
 
 myManageHook = composeAll [] <+> namedScratchpadManageHook myScratchPads
@@ -64,20 +61,13 @@ myLayout = tiled ||| Full ||| threeCol
 clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
     where i = fromJust $ M.lookup ws myWorkspaceIndices
 
-myStartupHook = do
-    spawnOnce "/usr/bin/emacs --daemon"
-    spawnOnce "feh --bg-fill ~/.cache/wall/"
-    spawnOnce "picom"
-    spawnOnce "nm-applet"
-
--- myKeys = \c -> mkKeymap c $ [
 myKeys = [
-    ("M-C-r", spawn "xmonad --recompile && xmonad --restart"),      -- Recompile XMonad
-    ("M-S-r", spawn "xmonad --restart"),        -- Restart XMonad
-    ("M-S-q", io exitSuccess),                  -- Exit XMonad
+    ("M-C-r", spawn "xmonad --recompile && xmonad --restart"),
+    ("M-S-r", spawn "xmonad --restart"),
+    ("M-S-q", io exitSuccess),
 
-    ("M-<Return>", spawn myTerminal),           -- Launch terminal
-    ("M-q", spawn myBrowser),                   -- Launch browser
+    ("M-<Return>", spawn myTerminal),
+    ("M-q", spawn myBrowser),
 
     ("M-S-c", kill1),
     ("M-w", goToSelected def),
@@ -89,7 +79,7 @@ myKeys = [
     ("M-p", namedScratchpadAction myScratchPads "keepassxc"),
 
     ("M-c", spawn "setxkbmap -v | grep colemak_dh && setxkbmap us || setxkbmap us -variant colemak_dh"),
-    ("M-r", spawn "rofi -show run")
+    ("M-r", spawn "redshift -P -O 2500 & rofi -show run")
     ]
 
 
@@ -97,7 +87,6 @@ myConfig = def
     {
        modMask     = myModMask,
        terminal    = myTerminal,
-       startupHook = myStartupHook,
        workspaces  = myWorkspaces,
        layoutHook  = myLayout,
        manageHook  = myManageHook

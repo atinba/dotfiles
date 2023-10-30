@@ -6,6 +6,5 @@
 - update to 23.11
 - change uname to ab (also unify the username var in hm and system)
   - add hashed pwd etc
-- change programs and services structure in hm
 - manage hm with nixos-rebuild
 - add librewolf opts in nix config

@@ -24,26 +24,30 @@
         enable = true;
         editor = false;
       };
-
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
-
       timeout = 0;
     };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   users.users.atin = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   environment.interactiveShellInit = ''
     export GPG_TTY=$(tty)
   '';
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "tty";
+  };
+
 
   fonts.packages = with pkgs; [
     jetbrains-mono
@@ -57,15 +61,9 @@
       options = "--delete-older-than 7d";
     };
 
-    #package = pkgs.nixVersions.unstable;
-    #registry.nixpkgs.flake = nixpkgs;
-
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
-
-      #keep-outputs = true;
-      #keep-derivations = true;
       trusted-users = [ "root" "atin" ];
     };
 

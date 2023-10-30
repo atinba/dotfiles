@@ -6,9 +6,9 @@ let
   configHome = "${homeDirectory}/.config";
   stateVersion = "23.05";
 
-  toPath = x: y: ./. + "/${x}/${y}";
+  toPath = x: ./. + "/modules/${x}";
 
-  imports = map (toPath "programs") [
+  imports = map toPath [
     "bash.nix"
     #"beets.nix"
     "git.nix"
@@ -16,10 +16,10 @@ let
     "nvim.nix"
 
     "xmonad"
-  ] ++ map (toPath "services") [
-    "redshift.nix"
     "polybar"
   ];
+
+  allpkgs = import ./pkgs.nix { inherit pkgs; };
 
 in
 {
@@ -34,7 +34,7 @@ in
   services = {
     flameshot.enable = true;
     gpg-agent = {
-      enable = true;
+      enable = false;
       enableSshSupport = true;
       pinentryFlavor = "tty";
     };
@@ -43,16 +43,7 @@ in
   home = {
     inherit username homeDirectory stateVersion;
 
-    packages = with pkgs; [
-      bat
-      element-desktop
-      fzf
-      htop
-      keepassxc
-      mpv
-      pavucontrol
-      zathura
-    ];
+    packages = with pkgs; allpkgs;
 
     sessionVariables = {
       DISPLAY = ":0";
