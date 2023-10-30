@@ -43,6 +43,10 @@ in
   home = {
     inherit username homeDirectory stateVersion;
 
+    sessionPath = [
+      "$HOME/.dotfiles/scripts/"
+    ];
+
     packages = with pkgs; allpkgs;
 
     sessionVariables = {

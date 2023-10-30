@@ -1,4 +1,5 @@
 SYSTEM_CONFIG_NAME="laptop"
+NIX_CONFIG_DIR="$HOME/.dotfiles"
 
 usage() {
     echo "Usage: $0 [options] [command]"
@@ -13,11 +14,11 @@ usage() {
 }
 
 switchHM() {
-  home-manager switch --show-trace --flake /home/atin/.dotfiles#ab
+  home-manager switch --show-trace --flake $NIX_CONFIG_DIR#ab
 }
 
 switchSys() {
-  sudo nixos-rebuild switch --show-trace --install-bootloader --flake /home/atin/.dotfiles#laptop
+  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#laptop
 }
 
 if [ $# -eq 0 ]; then
@@ -26,6 +27,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+cd $NIX_CONFIG_DIR
 git add -A
 nix fmt
 
