@@ -12,6 +12,7 @@ let
   ];
 in
 with pkgs; core ++ [
+  rofi
   keepassxc
   mpv
   pavucontrol

@@ -9,28 +9,12 @@
 with pkgs;
 mkShell {
   buildInputs = [
-    gcc
-    binutils
+    cross_i686.buildPackages.gcc
     gdb
     gnumake
-    bison
-    flex
-    gmp
-    libmpc
-    mpfr
-    texinfo
-    cloog
-    isl
-    autoconf
-    automake
-    unzip
-    ncurses
-    file
-    cdk
-    help2man
-    libtool
-
-    cross_i686.buildPackages.gcc
+    grub2
+    xorriso
+    qemu
   ];
 }
 

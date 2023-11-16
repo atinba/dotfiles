@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./modules/xserver.nix
     ./modules/networkmanager.nix
+    ./modules/xserver.nix
     ./modules/vbox.nix
 
     ./modules/services/pipewire.nix

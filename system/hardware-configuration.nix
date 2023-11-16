@@ -10,8 +10,11 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.kernelModules = [ ];
+  #boot.initrd.kernelModules = [ "nvidia" ];
+  #boot.kernelParams = [ "module_blacklist=i915" ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =

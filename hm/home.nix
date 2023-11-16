@@ -15,8 +15,9 @@ let
     "librewolf.nix"
     "nvim.nix"
 
-    "xmonad"
-    "polybar"
+    #"xmonad"
+    #"hyprland"
+    #"polybar"
   ];
 
   allpkgs = import ./pkgs.nix { inherit pkgs; };
