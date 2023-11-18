@@ -18,6 +18,8 @@ let
     #"xmonad"
     #"hyprland"
     #"polybar"
+  ] ++ [
+    (./. + "/shells")
   ];
 
   allpkgs = import ./pkgs.nix { inherit pkgs; };
@@ -29,11 +31,9 @@ in
     home-manager.enable = true;
     gpg.enable = true;
     ssh.enable = true;
-    alacritty.enable = true;
   };
 
   services = {
-    flameshot.enable = true;
     gpg-agent = {
       enable = false;
       enableSshSupport = true;
@@ -43,10 +43,6 @@ in
 
   home = {
     inherit username homeDirectory stateVersion;
-
-    sessionPath = [
-      "$HOME/.dotfiles/scripts/"
-    ];
 
     packages = with pkgs; allpkgs;
 

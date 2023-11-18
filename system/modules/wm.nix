@@ -18,6 +18,7 @@
     enableNvidiaPatches = true;
   };
 
+  programs.waybar.enable = true;
   services = {
     upower.enable = true;
     xserver = {

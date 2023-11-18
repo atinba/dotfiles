@@ -3,13 +3,12 @@
 {
   imports = [
     ./modules/networkmanager.nix
-    ./modules/xserver.nix
-    ./modules/vbox.nix
+    ./modules/wm.nix
 
     ./modules/services/pipewire.nix
     ./modules/services/ssh.nix
 
-    ./hardware-configuration.nix
+    ./hardware.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
@@ -57,8 +56,8 @@
   nix = {
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+      dates = "monthly";
+      options = "--delete-older-than 1m";
     };
 
     settings = {

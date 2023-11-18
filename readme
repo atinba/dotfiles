@@ -1,4 +1,9 @@
 # Todos
+- cleanup
+- shell prompt lambda
+- symlinks
+    - to files/folders inside .config dir
+    - scripts
 - Switch to wayland
   - Hyprland/River
   - Polybar alternative

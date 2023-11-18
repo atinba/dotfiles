@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 SYSTEM_CONFIG_NAME="laptop"
 NIX_CONFIG_DIR="$HOME/.dotfiles"
 
