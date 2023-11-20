@@ -2,9 +2,9 @@
 
 DOTF=~/.dotfiles/.config
 
-ln -s ~/.config/nvim "$DOTF/nvim" 
-ln -s ~/.config/hypr "$DOTF/hypr" 
-ln -s ~/.config/fish "$DOTF/fish" 
+ln -sf "$DOTF/nvim" ~/.config/nvim 
+ln -sf "$DOTF/hypr" ~/.config/hypr 
+# ln -sf "$DOTF/fish" ~/.config/fish 
 
 # ln -sf ~/.dotfiles
 
