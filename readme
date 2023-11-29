@@ -12,7 +12,6 @@
 - change uname to ab (also unify the username var in hm and system)
   - add hashed pwd etc
 - add librewolf opts in nix config
-- manage hm with nixos-rebuild
 - Build and test using ci
 - better script
 - update to 23.11

@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nurpkgs.url = github:nix-community/NUR;
+    nurpkgs.url = "github:nix-community/NUR";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,17 +22,18 @@
     in
     {
       formatter.x86_64-linux = fmt;
-      homeConfigurations = {
-        ab = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./hm/home.nix ];
-        };
-      };
 
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          modules = [ ./system/default.nix ];
+          modules = [
+            ./system/default.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.users.atin.imports = [ ./hm/home.nix ];
+            }
+          ];
         };
       };
     };

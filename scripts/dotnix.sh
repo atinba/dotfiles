@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SYSTEM_CONFIG_NAME="laptop"
-NIX_CONFIG_DIR="$HOME/.dotfiles"
+NIX_CONFIG_DIR="/home/atin/.dotfiles"
 
 usage() {
     echo "Usage: $0 [options] [command]"
@@ -41,7 +41,7 @@ case "$1" in
     u)
         echo "Updating everything..."
         nix flake update
-        switchHM
+        #switchHM
         switchSys
         ;;
     c)
