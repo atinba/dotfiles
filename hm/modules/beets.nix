@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.beets = {
     enable = true;
-    settings = {
-      "directory" = "~/media/beets";
-    };
+    settings = {"directory" = "~/media/beets";};
   };
 }

@@ -1,10 +1,12 @@
-{ config, lib, pkgs, inputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   networking = {
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager = {enable = true;};
     firewall.enable = false;
   };
 }

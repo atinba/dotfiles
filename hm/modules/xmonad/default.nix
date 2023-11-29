@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   extra = ''
     set +x
     ${pkgs.util-linux}/bin/setterm -blank 0 -powersave off -powerdown 0
@@ -8,8 +10,7 @@ let
     ${pkgs.xcape}/bin/xcape -e "Hyper_L=Tab;Hyper_R=backslash"
     ${pkgs.xorg.setxkbmap}/bin/setxkbmap -option ctrl:nocaps
   '';
-in
-{
+in {
   #xresources.properties = {
   # "Xft.dpi" = 180;
   #"Xft.autohint" = 0;
@@ -40,10 +41,7 @@ in
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
-      extraPackages = hp: [
-        hp.dbus
-        hp.monad-logger
-      ];
+      extraPackages = hp: [hp.dbus hp.monad-logger];
       config = ./config.hs;
     };
   };

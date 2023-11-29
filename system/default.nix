@@ -1,6 +1,10 @@
-{ config, pkgs, lib, nixpkgs, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  nixpkgs,
+  ...
+}: {
   imports = [
     ./modules/networkmanager.nix
     ./modules/wm.nix
@@ -34,7 +38,7 @@
 
   users.users.atin = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
 
   environment.interactiveShellInit = ''
@@ -47,10 +51,9 @@
     pinentryFlavor = "tty";
   };
 
-
   fonts.packages = with pkgs; [
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
   nix = {
@@ -62,12 +65,8 @@
 
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "atin" ];
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["root" "atin"];
     };
-
   };
-
 }
-
-

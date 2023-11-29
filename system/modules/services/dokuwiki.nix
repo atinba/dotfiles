@@ -1,10 +1,11 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   services.dokuwiki = {
     webserver = "caddy";
-    sites."localhost" = {
-      enable = true;
-    };
+    sites."localhost" = {enable = true;};
   };
 }

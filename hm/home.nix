@@ -1,6 +1,10 @@
-{ config, lib, pkgs, stdenv, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  stdenv,
+  ...
+}: let
   username = "atin";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
@@ -8,24 +12,22 @@ let
 
   toPath = x: ./. + "/modules/${x}";
 
-  imports = map toPath [
-    "bash.nix"
-    #"beets.nix"
-    "git.nix"
-    "librewolf.nix"
-    "nvim.nix"
+  imports =
+    map toPath [
+      "bash.nix"
+      #"beets.nix"
+      "git.nix"
+      "librewolf.nix"
+      "nvim.nix"
 
-    #"xmonad"
-    #"hyprland"
-    #"polybar"
-  ] ++ [
-    (./. + "/shells")
-  ];
+      #"xmonad"
+      #"hyprland"
+      #"polybar"
+    ]
+    ++ [(./. + "/shells")];
 
-  allpkgs = import ./pkgs.nix { inherit pkgs; };
-
-in
-{
+  allpkgs = import ./pkgs.nix {inherit pkgs;};
+in {
   inherit imports;
   programs = {
     home-manager.enable = true;
@@ -68,4 +70,3 @@ in
     };
   };
 }
-

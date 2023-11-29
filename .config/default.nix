@@ -1,6 +1,10 @@
-{ config, lib, pkgs, stdenv, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  stdenv,
+  ...
+}: {
   xdg.configFile.testdir = {
     enable = true;
     source = ~/testdir;

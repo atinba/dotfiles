@@ -1,5 +1,4 @@
-{ pkgs }:
-let
+{pkgs}: let
   core = with pkgs; [
     coreutils-full
     file
@@ -11,14 +10,16 @@ let
     ripgrep
   ];
 in
-with pkgs; core ++ [
-  rofi
-  keepassxc
-  mpv
-  pavucontrol
-  zathura
-  redshift
-  brightnessctl
-  man-pages
-  man-pages-posix
-]
+  with pkgs;
+    core
+    ++ [
+      rofi
+      keepassxc
+      mpv
+      pavucontrol
+      zathura
+      redshift
+      brightnessctl
+      man-pages
+      man-pages-posix
+    ]

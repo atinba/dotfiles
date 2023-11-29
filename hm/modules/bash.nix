@@ -1,13 +1,13 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.eza = {
     enable = true;
     git = true;
     icons = true;
-    extraOptions = [
-      "--group-directories-first"
-    ];
+    extraOptions = ["--group-directories-first"];
   };
   programs.bash = {
     enable = true;
