@@ -1,14 +1,8 @@
 # Todos
 - cleanup
 - shell prompt lambda
-- symlinks
-    - to files/folders inside .config dir
-    - scripts
-- Switch to wayland
-  - Hyprland/River
-  - Polybar alternative
-- Use fish
-- Switch to kitty/foot
+- fish, kitty/foot, riverwm, greetd
+- hm session opt fix (.profile not sourced)
 - change uname to ab (also unify the username var in hm and system)
   - add hashed pwd etc
 - add librewolf opts in nix config

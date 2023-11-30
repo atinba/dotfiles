@@ -44,6 +44,7 @@
   environment.interactiveShellInit = ''
     export GPG_TTY=$(tty)
   '';
+  environment.localBinInPath = true;
 
   programs.gnupg.agent = {
     enable = true;

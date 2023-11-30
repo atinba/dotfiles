@@ -12,21 +12,14 @@
 
   toPath = x: ./. + "/modules/${x}";
 
-  imports =
-    map toPath [
-      "bash.nix"
-      #"beets.nix"
-      "git.nix"
-      "librewolf.nix"
-      "nvim.nix"
+  imports = map toPath [
+    "bash.nix"
+    "git.nix"
+    "librewolf.nix"
+    "nvim.nix"
+  ];
 
-      #"xmonad"
-      #"hyprland"
-      #"polybar"
-    ]
-    ++ [(./. + "/shells")];
-
-  allpkgs = import ./pkgs.nix {inherit pkgs;};
+  allpkgs = import ./pkgs.nix;
 in {
   inherit imports;
   programs = {
@@ -67,6 +60,7 @@ in {
       pictures = "${homeDirectory}/";
       publicShare = "${homeDirectory}/";
       templates = "${homeDirectory}/";
+      videos = "${homeDirectory}/";
     };
   };
 }

@@ -1,25 +1,21 @@
-{pkgs}: let
-  core = with pkgs; [
-    coreutils-full
-    file
-
-    # Modern
-    bat
-    fzf
-    htop
-    ripgrep
-  ];
-in
-  with pkgs;
-    core
-    ++ [
-      rofi
-      keepassxc
-      mpv
-      pavucontrol
-      zathura
-      redshift
-      brightnessctl
-      man-pages
-      man-pages-posix
-    ]
+{pkgs}:
+with pkgs; [
+  coreutils-full
+  file
+  bat
+  fzf
+  htop
+  ripgrep
+  keepassxc
+  pavucontrol
+  zathura
+  man-pages
+  man-pages-posix
+  brightnessctl
+  tealdear
+  hledger
+  foot
+  acpi
+  xdg-ninja
+  wofi
+]
