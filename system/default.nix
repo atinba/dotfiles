@@ -19,7 +19,7 @@
   i18n.defaultLocale = "en_IN";
 
   networking.hostName = "nixos";
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 
   boot = {
     loader = {

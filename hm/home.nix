@@ -8,7 +8,7 @@
   username = "atin";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
-  stateVersion = "23.05";
+  stateVersion = "23.11";
 
   toPath = x: ./. + "/modules/${x}";
 
@@ -19,7 +19,7 @@
     "nvim.nix"
   ];
 
-  allpkgs = import ./pkgs.nix;
+  allpkgs = import ./pkgs.nix {inherit pkgs;};
 in {
   inherit imports;
   programs = {

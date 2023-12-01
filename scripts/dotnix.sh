@@ -11,8 +11,22 @@ usage() {
     echo "  e    Open vim in dotfiles dir"
 }
 
-switchSys() {
+ask_for_sudo() {
+    if [ "$EUID" -ne 0 ]; then
+        sudo -v
+    fi
+}
+
+update() {
+  fmt
+  nix flake update
   sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#laptop
+  git add -A
+}
+
+cleanup() {
+  sudo nix-collect-garbage --delete-older-than 15d
+  sudo nix store optimise
 }
 
 fmt() {
@@ -30,15 +44,12 @@ cd $NIX_CONFIG_DIR
 
 case "$1" in
     u)
-        echo "Updating..."
-        fmt
-        nix flake update
-        switchSys
-        git add -A
+        ask_for_sudo
+        update
         ;;
     c)
-        echo "Cleaning up..."
-        nix-collect-garbage
+        ask_for_sudo
+        cleanup
         ;;
     e)
         vim "$NIX_CONFIG_DIR"

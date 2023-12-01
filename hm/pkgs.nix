@@ -12,10 +12,11 @@ with pkgs; [
   man-pages
   man-pages-posix
   brightnessctl
-  tealdear
+  tealdeer
   hledger
   foot
   acpi
   xdg-ninja
   wofi
+  fastfetch
 ]
