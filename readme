@@ -8,5 +8,4 @@
 - add librewolf opts in nix config
 - Build and test using ci
 - better script
-- update to 23.11
 
