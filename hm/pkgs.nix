@@ -19,4 +19,6 @@ with pkgs; [
   xdg-ninja
   wofi
   fastfetch
+  activitywatch
+  fish
 ]

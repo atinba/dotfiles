@@ -8,15 +8,12 @@
   username = "atin";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
-  stateVersion = "23.11";
+  stateVersion = "24.05";
 
-  toPath = x: ./. + "/modules/${x}";
+  toPath = x: ./. + "/${x}";
 
   imports = map toPath [
-    "bash.nix"
     "git.nix"
-    "librewolf.nix"
-    "nvim.nix"
   ];
 
   allpkgs = import ./pkgs.nix {inherit pkgs;};
@@ -26,6 +23,36 @@ in {
     home-manager.enable = true;
     gpg.enable = true;
     ssh.enable = true;
+
+    bash = {
+      enable = true;
+      enableCompletion = true;
+    };
+
+    eza = {
+      enable = true;
+      git = true;
+      icons = true;
+      extraOptions = ["--group-directories-first"];
+    };
+
+    neovim = {
+      enable = true;
+      viAlias = false;
+      vimAlias = true;
+    };
+
+    librewolf = {
+      enable = true;
+      settings = {
+        # FF Sync
+        "identity.fxaccounts.enabled" = true;
+        "general.useragent.compatMode.firefox" = true;
+        # Compact mode
+        "browser.compactmode.show" = true;
+        "browser.uidensity" = 1;
+      };
+    };
   };
 
   services = {
@@ -41,6 +68,13 @@ in {
 
     packages = with pkgs; allpkgs;
 
+    shellAliases = {
+      l = "eza -lah";
+      ls = "eza -lh";
+      la = "eza -ah";
+      lt = "eza -lah --tree";
+      ".." = "cd ..";
+    };
     sessionVariables = {
       DISPLAY = ":0";
       EDITOR = "nvim";
