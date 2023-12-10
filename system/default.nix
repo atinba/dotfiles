@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./modules/networkmanager.nix
+    ./modules/net.nix
     ./modules/wm.nix
 
     ./modules/services/pipewire.nix
@@ -19,7 +19,7 @@
   i18n.defaultLocale = "en_IN";
 
   networking.hostName = "nixos";
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   boot = {
     loader = {
