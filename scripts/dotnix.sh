@@ -9,6 +9,8 @@ usage() {
     echo "  u    Update all"
     echo "  c    Clean up temporary files"
     echo "  e    Open vim in dotfiles dir"
+    echo "  ed   Open dotnix.sh"
+    echo "  ep   Open pkgs file using vim"
 }
 
 ask_for_sudo() {
@@ -19,7 +21,6 @@ ask_for_sudo() {
 
 update() {
   fmt
-  nix flake update
   sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#laptop
   git add -A
 }
@@ -43,6 +44,9 @@ fi
 cd $NIX_CONFIG_DIR
 
 case "$1" in
+    s)
+        nix flake update
+        ;;
     u)
         ask_for_sudo
         update
@@ -53,6 +57,12 @@ case "$1" in
         ;;
     e)
         vim "$NIX_CONFIG_DIR"
+        ;;
+    ed)
+        vim scripts/dotnix.sh
+        ;;
+    ep)
+        vim +'$-1 | startinsert | norm! o' hm/pkgs.nix
         ;;
     *)
         echo "Error: Unknown command '$1'."
