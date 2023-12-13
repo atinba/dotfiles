@@ -1,6 +1,9 @@
 require "options"
 require "keymaps"
-require "plugins"
 require "colorschemes"
-require "telescope"
-require "treesitter"
+
+require "plugins"
+
+require "pconf.telescope"
+require "pconf.treesitter"
+require "pconf.nvim-tree"

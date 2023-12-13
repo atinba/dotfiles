@@ -17,8 +17,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
-keymap("n", "<leader>e", ":Lex 15<cr>", opts)
-
 -- Switching b/w modes
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
@@ -31,6 +29,9 @@ keymap("v", "<ESC>", "<NOP>", opts)
 keymap("c", "jk", "<ESC>", opts)
 keymap("c", "kj", "<ESC>", opts)
 keymap("c", "<ESC>", "<NOP>", opts)
+
+-- NvimTree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- Telescope
 keymap("n", "<leader>ft", "<cmd>Telescope<cr>", opts)

@@ -56,6 +56,10 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+    use {
+        "dense-analysis/ale"
+    }
+
   use "p00f/nvim-ts-rainbow"
 
   use {
