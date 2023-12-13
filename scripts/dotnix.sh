@@ -9,7 +9,7 @@ usage() {
     echo "  u    Update all"
     echo "  c    Clean up temporary files"
     echo "  e    Open vim in dotfiles dir"
-    echo "  ed   Open dotnix.sh"
+    echo "  es   Open dotnix.sh"
     echo "  ep   Open pkgs file using vim"
 }
 
@@ -45,20 +45,24 @@ cd $NIX_CONFIG_DIR
 
 case "$1" in
     s)
-        nix flake update
+        update
         ;;
     u)
         ask_for_sudo
+        nix flake update
         update
         ;;
     c)
         ask_for_sudo
         cleanup
         ;;
+    f)
+        nix fmt
+        ;;
     e)
         vim "$NIX_CONFIG_DIR"
         ;;
-    ed)
+    es)
         vim scripts/dotnix.sh
         ;;
     ep)

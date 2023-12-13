@@ -8,6 +8,7 @@
   imports = [
     ./modules/net.nix
     ./modules/wm.nix
+    ./modules/nextcloud.nix
 
     ./modules/services/pipewire.nix
     ./modules/services/ssh.nix
