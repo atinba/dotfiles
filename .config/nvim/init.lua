@@ -1,6 +1,7 @@
 require "options"
 require "keymaps"
 require "colorschemes"
+require "lsp"
 
 require "plugins"
 

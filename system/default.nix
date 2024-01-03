@@ -8,7 +8,7 @@
   imports = [
     ./modules/net.nix
     ./modules/wm.nix
-    ./modules/nextcloud.nix
+    #    ./modules/nextcloud.nix
 
     ./modules/services/pipewire.nix
     ./modules/services/ssh.nix
@@ -17,7 +17,7 @@
   ];
 
   time.timeZone = "Asia/Kolkata";
-  i18n.defaultLocale = "en_IN";
+  i18n.defaultLocale = "en_US.UTF-8";
 
   networking.hostName = "nixos";
   system.stateVersion = "24.05";

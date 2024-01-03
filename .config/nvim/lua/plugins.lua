@@ -62,6 +62,19 @@ return packer.startup(function(use)
 
   use "p00f/nvim-ts-rainbow"
 
+    	use({
+		"neovim/nvim-lspconfig",
+	}) -- Collection of configurations for built-in LSP client
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
+use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
+use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
+use 'L3MON4D3/LuaSnip'
+use 'saadparwaiz1/cmp_luasnip'
+
+
   use {
    'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
