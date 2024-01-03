@@ -29,10 +29,10 @@ in {
       cap = ''!f(){ git coa "$*" && git push;};f '';
     };
     extraConfig = gitConfig;
-    signing = {
-      key = "4D86015738F52C20";
-      signByDefault = true;
-    };
+    #signing = {
+    #  key = "4D86015738F52C20";
+    #  signByDefault = true;
+    #};
     userEmail = "hi@atinb.me";
     userName = "Atin Bainada";
   };
