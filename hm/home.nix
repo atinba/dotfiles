@@ -33,7 +33,7 @@ in {
       enable = true;
       git = true;
       icons = true;
-      extraOptions = ["--group-directories-first"];
+      extraOptions = ["--group-directories-first" "-I=.git"];
     };
 
     neovim = {
