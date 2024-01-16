@@ -27,7 +27,7 @@ sync() {
 
 update() {
   fmt
-  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
+  sudo nixos-rebuild switch --show-trace --install-bootloader --log-format internal-json -v --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME |& nom --json
   git add -A
 }
 

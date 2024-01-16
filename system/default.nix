@@ -17,9 +17,21 @@
   system.stateVersion = "24.05";
 
   stylix = {
-    image = pkgs.fetchurl {
-      url = "https://www.bing.com//th?id=OHR.StartPointLight_ROW3327480520_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp";
-      sha256 = "sha256-pE+pvdznEgrusie1bgarjzAC3I1aQF1RinoSCJK2FYc=";
+    image = ../.wall/astro.jpg;
+    polarity = "dark";
+    fonts = rec {
+      monospace = {
+        name = "JetBrains Mono";
+        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+      };
+      serif = monospace;
+      sansSerif = monospace;
+      sizes = {
+        applications = 9;
+        desktop = 9;
+        popups = 9;
+        terminal = 9;
+      };
     };
   };
 
