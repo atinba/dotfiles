@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   environment.etc."nextcloud-admin-pass".text = "admin";
   environment.etc."nextcloud-secrets.json".text = ''
     {

@@ -1,8 +1,6 @@
 {
-  config,
-  lib,
   pkgs,
-  stdenv,
+  stylix,
   ...
 }: let
   username = "atin";
@@ -80,6 +78,7 @@ in {
       EDITOR = "nvim";
     };
   };
+  stylix.targets.vim.enable = false;
 
   xdg = {
     inherit configHome;

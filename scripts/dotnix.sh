@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SYSTEM_CONFIG_NAME="laptop"
+NIX_CONFIG_NAME="laptop"
 NIX_CONFIG_DIR="/home/atin/.dotfiles"
 
 usage() {
@@ -19,9 +19,15 @@ ask_for_sudo() {
     fi
 }
 
+sync() {
+    nix-channel --update
+    sudo nix-channel --update
+    nix flake update
+}
+
 update() {
   fmt
-  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#laptop
+  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
   git add -A
 }
 
@@ -49,7 +55,7 @@ case "$1" in
         ;;
     u)
         ask_for_sudo
-        nix flake update
+        sync
         update
         ;;
     c)

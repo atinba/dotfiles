@@ -1,17 +1,11 @@
 {
-  config,
   pkgs,
-  lib,
-  nixpkgs,
+  stylix,
   ...
 }: {
   imports = [
-    ./modules/net.nix
     ./modules/wm.nix
-    #    ./modules/nextcloud.nix
-
-    ./modules/services/pipewire.nix
-    ./modules/services/ssh.nix
+    ./modules/services.nix
 
     ./hardware.nix
   ];
@@ -21,6 +15,13 @@
 
   networking.hostName = "nixos";
   system.stateVersion = "24.05";
+
+  stylix = {
+    image = pkgs.fetchurl {
+      url = "https://www.bing.com//th?id=OHR.StartPointLight_ROW3327480520_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp";
+      sha256 = "sha256-pE+pvdznEgrusie1bgarjzAC3I1aQF1RinoSCJK2FYc=";
+    };
+  };
 
   boot = {
     loader = {
@@ -42,10 +43,12 @@
     extraGroups = ["networkmanager" "wheel" "docker"];
   };
 
-  environment.interactiveShellInit = ''
-    export GPG_TTY=$(tty)
-  '';
-  environment.localBinInPath = true;
+  environment = {
+    interactiveShellInit = ''
+      export GPG_TTY=$(tty)
+    '';
+    localBinInPath = true;
+  };
 
   programs.gnupg.agent = {
     enable = true;
@@ -55,18 +58,11 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
-    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
 
   nix = {
-    gc = {
-      automatic = true;
-      dates = "monthly";
-      options = "--delete-older-than 1m";
-    };
-
+    optimise.automatic = true;
     settings = {
-      auto-optimise-store = true;
       experimental-features = ["nix-command" "flakes"];
       trusted-users = ["root" "atin"];
     };

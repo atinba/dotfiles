@@ -1,24 +1,34 @@
 {pkgs}:
 with pkgs; [
-  coreutils-full
-  file
+  acpi
   bat
+  brightnessctl
+  clang
+  clang-tools
+  coreutils-full
+  element-desktop
+  fastfetch
+  file
+  fish
+  foot
   fzf
+  gdb
+  hledger
   htop
-  ripgrep
   keepassxc
-  pavucontrol
-  zathura
+  lua-language-server
   man-pages
   man-pages-posix
-  brightnessctl
+  nix-output-monitor
+  pavucontrol
+  python3
+  ripgrep
+  stylua
   tealdeer
-  hledger
-  foot
-  acpi
-  xdg-ninja
+  unzip
+  vscode
+  wl-clipboard
   wofi
-  fastfetch
-  activitywatch
-  fish
+  xdg-ninja
+  zathura
 ]
