@@ -8,54 +8,40 @@
   configHome = "${homeDirectory}/.config";
   stateVersion = "24.05";
 
-  toPath = x: ./. + "/${x}";
-
-  imports = map toPath [
-    "git.nix"
+  imports = [
+    ./git.nix
+    ./pkgs.nix
   ];
-
-  allpkgs = import ./pkgs.nix {inherit pkgs;};
 in {
   inherit imports;
-  programs = {
-    home-manager.enable = true;
-    gpg.enable = true;
-    ssh.enable = true;
 
-    bash = {
-      enable = true;
-      enableCompletion = true;
-    };
+  stylix.targets.vim.enable = false;
 
-    eza = {
-      enable = true;
-      git = true;
-      icons = true;
-      extraOptions = ["--group-directories-first" "-I=.git"];
-    };
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
+        trim_trailing_whitespace = true;
+        insert_final_newline = true;
+        indent_style = "space";
+        indent_size = 4;
+      };
 
-    neovim = {
-      enable = true;
-      viAlias = false;
-      vimAlias = true;
-    };
+      "*.md" = {
+        trim_trailing_whitespace = false;
+      };
 
-    librewolf = {
-      enable = true;
-      settings = {
-        # FF Sync
-        "identity.fxaccounts.enabled" = true;
-        "general.useragent.compatMode.firefox" = true;
-        # Compact mode
-        "browser.compactmode.show" = true;
-        "browser.uidensity" = 1;
+      "Makefile" = {
+        indent_style = "tab";
       };
     };
   };
 
   services = {
     gpg-agent = {
-      enable = false;
+      enable = false; # TODO
       enableSshSupport = true;
       pinentryFlavor = "tty";
     };
@@ -64,8 +50,6 @@ in {
   home = {
     inherit username homeDirectory stateVersion;
 
-    packages = with pkgs; allpkgs;
-
     shellAliases = {
       l = "eza -lah";
       ls = "eza -lh";
@@ -73,12 +57,12 @@ in {
       lt = "eza -lah --tree";
       ".." = "cd ..";
     };
+
     sessionVariables = {
       DISPLAY = ":0";
       EDITOR = "nvim";
     };
   };
-  stylix.targets.vim.enable = false;
 
   xdg = {
     inherit configHome;

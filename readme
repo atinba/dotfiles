@@ -1,12 +1,16 @@
 # Todos
+- build and test using ci (cachix?)
+- setup lock screen
 - stylix
-- cleanup
-- shell prompt lambda
-- fish, kitty/foot, riverwm, greetd
-- hm session opt fix (.profile not sourced)
-- change uname to ab (also unify the username var in hm and system)
-  - add hashed pwd etc
-- add librewolf opts in nix config
-- Build and test using ci
-- better script
+    - change colorscheme
+    - autoenable off?
+    - ???
+- shell
+    - lambda prompt
+    - kitty/foot/alacritty
+    - hm session opt fix (.profile not sourced)
+- user
+    - change uname to ab (also unify the username var in hm and system)
+    - add hashed pwd etc
+    - system, hw config cleanup
 

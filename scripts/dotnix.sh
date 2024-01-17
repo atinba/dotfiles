@@ -72,7 +72,7 @@ case "$1" in
         vim scripts/dotnix.sh
         ;;
     ep)
-        vim +'$-1 | startinsert | norm! o' hm/pkgs.nix
+        vim +'$-2 | startinsert | norm! o' hm/pkgs.nix
         ;;
     *)
         echo "Error: Unknown command '$1'."
