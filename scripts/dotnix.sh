@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+IFS=$'\n\t'
+
 NIX_CONFIG_NAME="laptop"
 NIX_CONFIG_DIR="/home/atin/.dotfiles"
 

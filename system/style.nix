@@ -4,8 +4,8 @@
   ...
 }: {
   stylix = {
-    image = ../.wall/ab.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/blueforest.yaml";
+    image = ../wall.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
 
     fonts = rec {
       monospace = {
@@ -24,7 +24,8 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
-    dejavu_fonts
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 }
