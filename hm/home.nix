@@ -15,7 +15,12 @@
 in {
   inherit imports;
 
-  stylix.targets.vim.enable = false;
+  stylix = {
+    targets = {
+      vim.enable = false;
+      nixvim.enable = false;
+    };
+  };
 
   editorconfig = {
     enable = true;

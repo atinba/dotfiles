@@ -1,8 +1,15 @@
 {pkgs, ...}: {
+  services = {
+    mako = {
+      enable = true;
+    };
+  };
+
   programs = {
     home-manager.enable = true;
 
     bat.enable = true;
+    #dunst.enable = true;
     fish.enable = true;
     fzf.enable = true;
     gpg.enable = true;
@@ -62,6 +69,7 @@
     coreutils-full
     element-desktop
     fastfetch
+    fd
     file
     gdb
     hledger
@@ -78,5 +86,6 @@
     xdg-ninja
 
     # Temp
+    gparted
   ];
 }

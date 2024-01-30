@@ -1,6 +1,7 @@
 # Todos
 - build and test using ci (cachix?)
 - setup lock screen
+- cleanup ~ (xdg-ninja)
 - stylix
     - change colorscheme
     - autoenable off?

@@ -22,6 +22,11 @@
         terminal = 9;
       };
     };
+
+    targets = {
+      nixvim.enable = false;
+      plymouth.enable = false;
+    };
   };
 
   fonts.packages = with pkgs; [

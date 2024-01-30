@@ -30,12 +30,13 @@ sync() {
 
 update() {
   fmt
-  sudo nixos-rebuild switch --show-trace --install-bootloader --log-format internal-json -v --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME |& nom --json
+  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
   git add -A
 }
 
 cleanup() {
-  sudo nix-collect-garbage --delete-older-than 15d
+  nix-collect-garbage -d
+  sudo nix-collect-garbage -d
   sudo nix store optimise
 }
 

@@ -4,18 +4,17 @@
   ...
 }: {
   imports = [
-    ./modules/wm.nix
-    ./modules/services.nix
-
     ./hardware.nix
     ./style.nix
+
+    ./modules/wm.nix
+    ./modules/services.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
-  i18n.defaultLocale = "en_US.UTF-8";
-
   networking.hostName = "nixos";
   system.stateVersion = "24.05";
+  security.polkit.enable = true;
 
   boot = {
     loader = {

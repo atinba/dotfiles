@@ -17,15 +17,17 @@
   #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
-    fsType = "ext4";
-  };
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/5288-1A02";
-    fsType = "vfat";
-    options = ["fmask=0137" "dmask=0027"];
+    "/boot/efi" = {
+      device = "/dev/disk/by-uuid/5288-1A02";
+      fsType = "vfat";
+      options = ["fmask=0137" "dmask=0027"];
+    };
   };
 
   swapDevices = [];
