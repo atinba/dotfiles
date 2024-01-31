@@ -1,10 +1,11 @@
 # Todos
+- fresh install with impermanence and encryption
 - build and test using ci (cachix?)
+- change display manager
 - setup lock screen
-- cleanup ~ (xdg-ninja)
+- home cleanup (xdg-ninja)
 - stylix
     - change colorscheme
-    - autoenable off?
     - ???
 - shell
     - lambda prompt

@@ -61,6 +61,7 @@ case "$1" in
         ask_for_sudo
         sync
         update
+        nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
         ;;
     c)
         ask_for_sudo

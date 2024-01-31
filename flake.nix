@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nurpkgs.url = "github:nix-community/NUR";
+    nixhw.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,6 +16,7 @@
     nixpkgs,
     home-manager,
     stylix,
+    nixhw,
     ...
   }: let
     system = "x86_64-linux";
@@ -30,8 +32,10 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = [
-        stylix.nixosModules.stylix
         ./system/default.nix
+
+        nixhw.nixosModules.common-gpu-nvidia-disable
+        stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
