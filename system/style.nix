@@ -5,7 +5,7 @@
 }: {
   stylix = {
     image = ../wall.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-latte.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
 
     fonts = rec {
       monospace = {

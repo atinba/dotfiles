@@ -24,6 +24,7 @@
       inherit system;
       config = {allowUnfree = true;};
     };
+    user = "atin";
 
     fmt = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   in {
@@ -32,15 +33,19 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = [
-        ./system/default.nix
+        # SYS
+        ./system
 
-        nixhw.nixosModules.common-gpu-nvidia-disable
-        stylix.nixosModules.stylix
+        # HM
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
-          home-manager.users.atin.imports = [./hm/home.nix];
+          home-manager.users.${user}.imports = [./hm/home.nix];
         }
+
+        # Extra
+        stylix.nixosModules.stylix
+        nixhw.nixosModules.common-gpu-nvidia-disable
       ];
     };
   };

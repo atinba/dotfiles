@@ -46,9 +46,8 @@ fmt() {
 }
 
 if [ $# -eq 0 ]; then
-    echo "Error: No command provided."
-    usage
-    exit 1
+    vim "$NIX_CONFIG_DIR"
+    exit 0
 fi
 
 cd $NIX_CONFIG_DIR
@@ -70,9 +69,6 @@ case "$1" in
     f)
         nix fmt
         ;;
-    e)
-        vim "$NIX_CONFIG_DIR"
-        ;;
     es)
         vim scripts/dotnix.sh
         ;;
@@ -80,7 +76,6 @@ case "$1" in
         vim +'$-2 | startinsert | norm! o' hm/pkgs.nix
         ;;
     *)
-        echo "Error: Unknown command '$1'."
         usage
         exit 1
         ;;
