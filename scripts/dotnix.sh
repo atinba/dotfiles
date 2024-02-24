@@ -45,8 +45,12 @@ fmt() {
     nix fmt
 }
 
-if [ $# -eq 0 ]; then
+open_vim() {
     vim "$NIX_CONFIG_DIR"
+}
+
+if [ $# -eq 0 ]; then
+    open_vim
     exit 0
 fi
 
@@ -68,6 +72,9 @@ case "$1" in
         ;;
     f)
         nix fmt
+        ;;
+    e)
+        open_vim
         ;;
     es)
         vim scripts/dotnix.sh

@@ -7,6 +7,8 @@
       br = "branch";
       co = "checkout";
       st = "status";
+      d = "diff";
+      dc = "diff --cached";
       cm = "commit -m";
       ca = "commit -am";
       coa = "!git add -A && git commit -m";
@@ -32,7 +34,7 @@
     #  signByDefault = true;
     #};
 
-    userEmail = "hi@atinb.me";
+    userEmail = "hi@atinb.me"; # TODO: update
     userName = "Atin Bainada";
   };
 }

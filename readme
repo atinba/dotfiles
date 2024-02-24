@@ -1,4 +1,5 @@
 # Todos
+- update path with scripts path
 - fresh install with impermanence and encryption - test in vm
 - better security - firejail, hardening, agenix
 - build and test using ci (cachix?)

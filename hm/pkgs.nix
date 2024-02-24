@@ -20,6 +20,11 @@
     wofi.enable = true;
     zathura.enable = true;
 
+    zoxide = {
+      enable = true;
+      options = ["--cmd" "cd"];
+    };
+
     bash = {
       enable = true;
       enableCompletion = true;
