@@ -7,7 +7,8 @@
       br = "branch";
       co = "checkout";
       st = "status";
-      d = "diff";
+      d = "diff HEAD";
+      df = "diff";
       dc = "diff --cached";
       cm = "commit -m";
       ca = "commit -am";
