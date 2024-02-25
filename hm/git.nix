@@ -30,12 +30,12 @@
       };
     };
 
-    #signing = {
+    #signing = { # TODO
     #  key = "4D86015738F52C20";
     #  signByDefault = true;
     #};
 
-    userEmail = "hi@atinb.me"; # TODO: update
+    userEmail = "atin@tuta.io";
     userName = "Atin Bainada";
   };
 }
