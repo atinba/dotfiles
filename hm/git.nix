@@ -3,15 +3,16 @@
     enable = true;
     package = pkgs.gitFull;
     aliases = {
-      loc = ''!f(){ git ls-files | ${pkgs.ripgrep}/bin/rg "\.''${1}" | xargs wc -l;};f'';
+      c = "commit -v";
+      cs = "commit -sv";
+      cm = "commit -m";
+      ca = "commit -am";
       br = "branch";
       co = "checkout";
       st = "status";
       d = "diff HEAD";
       df = "diff";
       dc = "diff --cached";
-      cm = "commit -m";
-      ca = "commit -am";
       coa = "!git add -A && git commit -m";
       cap = ''!f(){ git coa "$*" && git push;};f '';
     };
@@ -21,6 +22,7 @@
         editor = "nvim";
       };
       init.defaultBranch = "main";
+      trailer.sign.key = "Signed-off-by";
     };
 
     delta = {
@@ -30,12 +32,12 @@
       };
     };
 
-    #signing = { # TODO
-    #  key = "4D86015738F52C20";
-    #  signByDefault = true;
-    #};
+    signing = {
+      key = "4D86015738F52C20";
+      signByDefault = true;
+    };
 
-    userEmail = "atin@tuta.io";
+    userEmail = "atin4@proton.me";
     userName = "Atin Bainada";
   };
 }

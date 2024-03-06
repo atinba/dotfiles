@@ -46,7 +46,7 @@ in {
 
   services = {
     gpg-agent = {
-      enable = false; # TODO
+      enable = true;
       enableSshSupport = true;
       pinentryFlavor = "tty";
     };

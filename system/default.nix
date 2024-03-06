@@ -27,6 +27,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+  users.defaultUserShell = pkgs.fish;
   users.users.atin = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "docker"];

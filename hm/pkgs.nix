@@ -80,6 +80,7 @@
     hledger
     hyprpaper
     keepassxc
+    ledger
     lua-language-server
     man-pages
     man-pages-posix
