@@ -11,7 +11,7 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
-      pinentryFlavor = "tty";
+      pinentryPackage = pkgs.pinentry-tty;
     };
     fish.enable = true;
   };

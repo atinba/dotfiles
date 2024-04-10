@@ -9,7 +9,7 @@
   stateVersion = "24.05";
 
   imports = [
-    ./git.nix
+    ./dev.nix
     ./pkgs.nix
   ];
 in {
@@ -22,33 +22,11 @@ in {
     };
   };
 
-  editorconfig = {
-    enable = true;
-    settings = {
-      "*" = {
-        charset = "utf-8";
-        end_of_line = "lf";
-        trim_trailing_whitespace = true;
-        insert_final_newline = true;
-        indent_style = "space";
-        indent_size = 4;
-      };
-
-      "*.md" = {
-        trim_trailing_whitespace = false;
-      };
-
-      "Makefile" = {
-        indent_style = "tab";
-      };
-    };
-  };
-
   services = {
     gpg-agent = {
       enable = true;
       enableSshSupport = true;
-      pinentryFlavor = "tty";
+      pinentryPackage = pkgs.pinentry-tty;
     };
   };
 
