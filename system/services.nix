@@ -25,11 +25,11 @@
         enable = true;
         wayland = true;
       };
+    };
 
-      libinput = {
-        enable = true;
-        touchpad.disableWhileTyping = true;
-      };
+    libinput = {
+      enable = true;
+      touchpad.disableWhileTyping = true;
     };
 
     pipewire = {

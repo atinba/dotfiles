@@ -47,6 +47,9 @@
       export GPG_TTY=$(tty)
     '';
     localBinInPath = true;
+    systemPackages = with pkgs; [
+      #(perl.withPackages (p: with p; [DBI DBDSQLite]))
+    ];
   };
 
   security.auditd.enable = true;
@@ -54,5 +57,5 @@
   security.audit.rules = [
     "-a exit,always -F arch=b64 -S execve"
   ];
-  security.sudo-rs.enable = true;
+  #security.sudo-rs.enable = true;
 }

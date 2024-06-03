@@ -42,6 +42,7 @@
         dc = "diff --cached";
         coa = "!git add -A && git commit -m";
         cap = ''!f(){ git coa "$*" && git push;};f '';
+        lg = "log --pretty=format:'%C(auto)%h%C(blue) %<|(19)%as%C(auto)%d - %s'";
       };
 
       extraConfig = {

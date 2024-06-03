@@ -9,13 +9,12 @@
     home-manager.enable = true;
 
     bat.enable = true;
-    fish.enable = true;
     fzf.enable = true;
     gpg.enable = true;
     htop.enable = true;
     ripgrep.enable = true;
     ssh.enable = true;
-    #tealdeer.enable = true;
+    tealdeer.enable = true;
     vscode.enable = true;
     wofi.enable = true;
     zathura.enable = true;
@@ -28,6 +27,9 @@
     bash = {
       enable = true;
       enableCompletion = true;
+      bashrcExtra = ''
+        eval "$(direnv hook bash)"
+      '';
     };
 
     eza = {
@@ -39,6 +41,13 @@
     foot = {
       enable = true;
       server.enable = true;
+    };
+
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        direnv hook fish | source
+      '';
     };
 
     kitty = {
@@ -67,8 +76,6 @@
   home.packages = with pkgs; [
     acpi
     brightnessctl
-    clang
-    clang-tools
     coreutils-full
     du-dust
     element-desktop
@@ -88,6 +95,7 @@
     pavucontrol
     pciutils
     python3
+    signal-desktop
     stylua
     tealdeer
     unzip
@@ -95,7 +103,24 @@
     wl-clipboard
     xdg-ninja
 
+    # C/Kernel Dev
+
+    #bc
+    #binutils
+    #bison
+    clang #-- collision with gcc
+    clang-tools
+    coccinelle
+    gdb
+    gnumake
+    qemu_full
+    #sqlite
+    #sparse
+
     # Temp
     gparted
+    nyxt
+    android-studio
+    android-tools
   ];
 }

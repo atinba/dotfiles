@@ -57,12 +57,15 @@ fi
 cd $NIX_CONFIG_DIR
 
 case "$1" in
-    s)
+    su)
+        ask_for_sudo
+        sync
         update
+        nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
         ;;
     u)
         ask_for_sudo
-        sync
+        #sync
         update
         nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
         ;;
