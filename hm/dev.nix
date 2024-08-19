@@ -31,7 +31,6 @@
       package = pkgs.gitFull;
       aliases = {
         c = "commit -v";
-        cs = "commit -sv";
         cm = "commit -m";
         ca = "commit -am";
         br = "branch";
@@ -54,7 +53,7 @@
       };
 
       delta = {
-        enable = true;
+        enable = false; # TODO: enable
         options = {
           side-by-side = "true";
         };

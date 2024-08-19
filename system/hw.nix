@@ -12,20 +12,26 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
   boot.kernelModules = ["kvm-intel"];
   boot.initrd.kernelModules = [];
-  #boot.initrd.kernelModules = [ "nvidia" ];
-  #boot.kernelParams = [ "module_blacklist=i915" ];
-  #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   boot.extraModulePackages = [];
 
   fileSystems = {
+    #"/" = {
+    #  device = "none";
+    #  fsType = "tmpfs";
+    #  neededForBoot = true;
+    #  options = ["defaults" "size=40%" "mode=755"];
+    #};
+
     "/" = {
       device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
       fsType = "ext4";
+      neededForBoot = true;
     };
 
     "/boot/efi" = {
       device = "/dev/disk/by-uuid/5288-1A02";
       fsType = "vfat";
+      neededForBoot = true;
       options = ["fmask=0137" "dmask=0027"];
     };
   };

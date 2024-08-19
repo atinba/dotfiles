@@ -84,7 +84,12 @@
     file
     gdb
     hledger
+
+    # Hyprrrrrrr
     hyprpaper
+    hyprlock
+    hypridle
+
     keepassxc
     ledger
     lua-language-server
@@ -113,14 +118,20 @@
     coccinelle
     gdb
     gnumake
-    qemu_full
+    #qemu_full
     #sqlite
     #sparse
 
     # Temp
     gparted
-    nyxt
+    # nyxt
     android-studio
     android-tools
+
+    jetbrains-toolbox
+    zola
+    helix
+    webcamoid
+    cheese
   ];
 }

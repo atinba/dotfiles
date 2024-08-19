@@ -19,6 +19,10 @@ in {
     targets = {
       vim.enable = false;
       nixvim.enable = false;
+      neovim.enable = false;
+      hyprpaper.enable = false;
+      hyprland.enable = false;
+      vscode.enable = false;
     };
   };
 
@@ -50,6 +54,7 @@ in {
   xdg = {
     inherit configHome;
     enable = true;
+    #configFile."mimeapps.list".force = true;
 
     userDirs = {
       enable = true;

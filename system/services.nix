@@ -2,7 +2,6 @@
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
-  hardware.opengl.enable = true;
   programs = {
     hyprland = {
       enable = true;
@@ -20,7 +19,6 @@
     xserver = {
       enable = true;
       xkb.layout = "us";
-
       displayManager.gdm = {
         enable = true;
         wayland = true;
@@ -39,8 +37,6 @@
       pulse.enable = true;
     };
 
-    thermald.enable = true;
-    invidious.enable = true;
     openssh.enable = true;
     upower.enable = true;
   };

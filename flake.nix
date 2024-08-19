@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nurpkgs.url = "github:nix-community/NUR";
     nixhw.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -41,11 +40,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.users.${user}.imports = [./hm/home.nix];
+          home-manager.backupFileExtension = "hm-backup";
         }
 
         # Extra
         stylix.nixosModules.stylix
-        nixhw.nixosModules.common-gpu-nvidia-disable
+        #nixhw.nixosModules.common-gpu-nvidia-disable
       ];
     };
   };

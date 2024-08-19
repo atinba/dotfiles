@@ -11,8 +11,6 @@ usage() {
     echo "Commands:"
     echo "  u    Update all"
     echo "  c    Clean up temporary files"
-    echo "  e    Open vim in dotfiles dir"
-    echo "  es   Open dotnix.sh"
     echo "  ep   Open pkgs file using vim"
 }
 
@@ -34,6 +32,12 @@ update() {
   git add -A
 }
 
+update_but_dont_switch() {
+  fmt
+  sudo nixos-rebuild boot --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
+  git add -A
+}
+
 cleanup() {
   nix-collect-garbage -d
   sudo nix-collect-garbage -d
@@ -43,6 +47,10 @@ cleanup() {
 fmt() {
     git add -A
     nix fmt
+}
+
+nvd_diff() {
+    nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
 }
 
 open_vim() {
@@ -61,13 +69,18 @@ case "$1" in
         ask_for_sudo
         sync
         update
-        nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
+        nvd_diff
         ;;
     u)
         ask_for_sudo
         #sync
         update
-        nvd diff $(ls -d1v /nix/var/nix/profiles/system-*-link|tail -n 2)
+        nvd_diff
+        ;;
+    ub)
+        ask_for_sudo
+        update_but_dont_switch
+        nvd_diff
         ;;
     c)
         ask_for_sudo
@@ -75,12 +88,6 @@ case "$1" in
         ;;
     f)
         nix fmt
-        ;;
-    e)
-        open_vim
-        ;;
-    es)
-        vim scripts/dotnix.sh
         ;;
     ep)
         vim +'$-2 | startinsert | norm! o' hm/pkgs.nix

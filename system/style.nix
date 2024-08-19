@@ -4,6 +4,7 @@
   ...
 }: {
   stylix = {
+    enable = true;
     image = ../wall.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
 

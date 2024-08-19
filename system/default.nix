@@ -3,6 +3,7 @@
     ./hw.nix
     ./services.nix
     ./style.nix
+    #./imperm.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
@@ -47,9 +48,6 @@
       export GPG_TTY=$(tty)
     '';
     localBinInPath = true;
-    systemPackages = with pkgs; [
-      #(perl.withPackages (p: with p; [DBI DBDSQLite]))
-    ];
   };
 
   security.auditd.enable = true;
