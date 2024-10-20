@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hw.nix
     ./services.nix
@@ -48,6 +52,12 @@
       export GPG_TTY=$(tty)
     '';
     localBinInPath = true;
+    systemPackages = with pkgs; [
+      config.boot.kernelPackages.perf
+      reaper
+      lmms
+      ardour
+    ];
   };
 
   security.auditd.enable = true;

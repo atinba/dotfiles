@@ -78,7 +78,7 @@
     brightnessctl
     coreutils-full
     du-dust
-    element-desktop
+    #element-desktop
     fastfetch
     fd
     file
@@ -115,9 +115,9 @@
     #bison
     clang #-- collision with gcc
     clang-tools
-    coccinelle
-    gdb
-    gnumake
+    #coccinelle
+    #gdb
+    #gnumake
     #qemu_full
     #sqlite
     #sparse
@@ -125,13 +125,13 @@
     # Temp
     gparted
     # nyxt
-    android-studio
-    android-tools
 
     jetbrains-toolbox
     zola
     helix
-    webcamoid
     cheese
+    rustup
+    zed-editor
+    anki-bin
   ];
 }

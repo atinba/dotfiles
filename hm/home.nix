@@ -48,6 +48,10 @@ in {
     sessionVariables = {
       DISPLAY = ":0";
       EDITOR = "nvim";
+
+      # XDG Ninja Related
+      #CARGO_HOME = "$XDG_DATA_HOME/cargo";
+      #RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
     };
   };
 

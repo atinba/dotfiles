@@ -21,8 +21,6 @@ ask_for_sudo() {
 }
 
 sync() {
-    nix-channel --update
-    sudo nix-channel --update
     nix flake update
 }
 
@@ -75,6 +73,9 @@ case "$1" in
         ask_for_sudo
         #sync
         update
+        nvd_diff
+        ;;
+    d)
         nvd_diff
         ;;
     ub)
