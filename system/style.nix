@@ -11,7 +11,7 @@
     fonts = rec {
       monospace = {
         name = "JetBrains Mono";
-        package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
       serif = monospace;
       sansSerif = monospace;
@@ -32,6 +32,6 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    nerd-fonts.jetbrains-mono
   ];
 }

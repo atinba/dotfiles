@@ -21,7 +21,9 @@
     };
   };
 
+  services.ssh-agent.enable = true;
   programs = {
+    ssh.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
@@ -61,7 +63,7 @@
 
       signing = {
         key = "4D86015738F52C20";
-        signByDefault = true;
+        signByDefault = false;
       };
 
       userEmail = "atin4@proton.me";

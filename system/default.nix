@@ -2,11 +2,14 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  dns_servers = import ./private.nix;
+in {
   imports = [
     ./hw.nix
     ./services.nix
     ./style.nix
+    ./overlays.nix
     #./imperm.nix
   ];
 
@@ -14,7 +17,19 @@
   system.stateVersion = "24.05";
   networking = {
     networkmanager.enable = true;
+    networkmanager.dns = "systemd-resolved";
+    useDHCP = false;
+    dhcpcd.enable = false;
+    nameservers = dns_servers.servers;
     hostName = "nixos";
+  };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = ["~."];
+    fallbackDns = dns_servers.servers;
+    dnsovertls = "true";
   };
 
   boot = {
@@ -55,15 +70,20 @@
     systemPackages = with pkgs; [
       config.boot.kernelPackages.perf
       reaper
-      lmms
-      ardour
+      #lmms
+      #ardour
     ];
   };
 
-  security.auditd.enable = true;
-  security.audit.enable = true;
-  security.audit.rules = [
-    "-a exit,always -F arch=b64 -S execve"
-  ];
+  security = {
+    auditd.enable = true;
+    audit = {
+      enable = true;
+      rules = [
+        "-a exit,always -F arch=b64 -S execve"
+      ];
+    };
+  };
+
   #security.sudo-rs.enable = true;
 }

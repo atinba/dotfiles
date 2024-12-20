@@ -15,7 +15,6 @@
     nixpkgs,
     home-manager,
     stylix,
-    nixhw,
     ...
   }: let
     system = "x86_64-linux";
@@ -38,9 +37,11 @@
         # HM
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.users.${user}.imports = [./hm/home.nix];
-          home-manager.backupFileExtension = "hm-backup";
+          home-manager = {
+            useGlobalPkgs = true;
+            users.${user}.imports = [./hm/home.nix];
+            backupFileExtension = "hm-backup";
+          };
         }
 
         # Extra

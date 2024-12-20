@@ -1,4 +1,21 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        #Enable = "Source,Sink,Media,Socket";
+        #Experimental = true;
+      };
+    };
+  };
+
+  services.blueman.enable = true;
+
   security.rtkit.enable = true;
   security.polkit.enable = true;
 
@@ -35,6 +52,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      jack.enable = true;
     };
 
     openssh.enable = true;

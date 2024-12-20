@@ -13,7 +13,6 @@
     gpg.enable = true;
     htop.enable = true;
     ripgrep.enable = true;
-    ssh.enable = true;
     tealdeer.enable = true;
     vscode.enable = true;
     wofi.enable = true;
@@ -34,7 +33,7 @@
 
     eza = {
       enable = true;
-      icons = true;
+      icons = "auto";
       extraOptions = ["--group-directories-first" "-I=.git"];
     };
 
@@ -106,7 +105,10 @@
     unzip
     vlc
     wl-clipboard
-    xdg-ninja
+
+    grim
+    slurp
+    swappy
 
     # C/Kernel Dev
 
@@ -131,7 +133,18 @@
     helix
     cheese
     rustup
-    zed-editor
+    #zed-editor
     anki-bin
+    nodePackages.tiddlywiki
+    alejandra
+    uv
+    go
+    gopls
+    brave
+    mpv
+    musescore
+    tuxguitar
+    xournalpp
+    openboard
   ];
 }
