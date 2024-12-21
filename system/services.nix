@@ -15,7 +15,7 @@
   };
 
   services.blueman.enable = true;
-
+  services.fstrim.enable = true;
   security.rtkit.enable = true;
   security.polkit.enable = true;
 

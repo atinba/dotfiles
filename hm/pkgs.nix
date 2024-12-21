@@ -146,5 +146,6 @@
     tuxguitar
     xournalpp
     openboard
+    gitui
   ];
 }
