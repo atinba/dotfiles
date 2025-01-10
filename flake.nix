@@ -3,7 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixhw.url = "github:NixOS/nixos-hardware/master";
+    #nixhw.url = "github:NixOS/nixos-hardware/master";
+    musnix.url = "github:musnix/musnix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,6 +16,7 @@
     nixpkgs,
     home-manager,
     stylix,
+    musnix,
     ...
   }: let
     system = "x86_64-linux";
@@ -46,6 +48,7 @@
 
         # Extra
         stylix.nixosModules.stylix
+        musnix.nixosModules.musnix
         #nixhw.nixosModules.common-gpu-nvidia-disable
       ];
     };

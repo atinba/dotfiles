@@ -90,13 +90,12 @@
     hypridle
 
     keepassxc
-    ledger
+    #ledger
     lua-language-server
     man-pages
     man-pages-posix
     nix-output-monitor
     nvd
-    pavucontrol
     pciutils
     python3
     signal-desktop
@@ -115,14 +114,15 @@
     #bc
     #binutils
     #bison
-    clang #-- collision with gcc
-    clang-tools
+    # clang #-- collision with gcc
+    # clang-tools
     #coccinelle
     #gdb
     #gnumake
     #qemu_full
     #sqlite
     #sparse
+    gcc
 
     # Temp
     gparted
@@ -142,8 +142,7 @@
     gopls
     brave
     mpv
-    musescore
-    tuxguitar
+
     xournalpp
     openboard
     gitui

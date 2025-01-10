@@ -37,8 +37,8 @@ update_but_dont_switch() {
 }
 
 cleanup() {
-  nix-collect-garbage -d
-  sudo nix-collect-garbage -d
+  nix-collect-garbage --delete-older-than 30d
+  sudo nix-collect-garbage --delete-older-than 30d
   sudo nix store optimise
 }
 

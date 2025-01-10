@@ -2,36 +2,21 @@
   pkgs,
   config,
   ...
-}: let
-  dns_servers = import ./private.nix;
-in {
+}: {
   imports = [
     ./hw.nix
     ./services.nix
     ./style.nix
     ./overlays.nix
+    ./audio.nix
+    ./networking.nix
+    ./display.nix
     #./imperm.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
   system.stateVersion = "24.05";
-  networking = {
-    networkmanager.enable = true;
-    networkmanager.dns = "systemd-resolved";
-    useDHCP = false;
-    dhcpcd.enable = false;
-    nameservers = dns_servers.servers;
-    hostName = "nixos";
-  };
-
-  services.resolved = {
-    enable = true;
-    dnssec = "true";
-    domains = ["~."];
-    fallbackDns = dns_servers.servers;
-    dnsovertls = "true";
-  };
-
+  # nixpkgs.config.allowUnfree = true;
   boot = {
     loader = {
       systemd-boot = {
@@ -69,9 +54,6 @@ in {
     localBinInPath = true;
     systemPackages = with pkgs; [
       config.boot.kernelPackages.perf
-      reaper
-      #lmms
-      #ardour
     ];
   };
 
