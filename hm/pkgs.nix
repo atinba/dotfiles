@@ -20,7 +20,10 @@
 
     zoxide = {
       enable = true;
-      options = ["--cmd" "cd"];
+      options = [
+        "--cmd"
+        "cd"
+      ];
     };
 
     bash = {
@@ -34,7 +37,10 @@
     eza = {
       enable = true;
       icons = "auto";
-      extraOptions = ["--group-directories-first" "-I=.git"];
+      extraOptions = [
+        "--group-directories-first"
+        "-I=.git"
+      ];
     };
 
     foot = {
