@@ -26,13 +26,15 @@ sync() {
 
 update() {
   fmt
-  sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
+  nh os switch $NIX_CONFIG_DIR
+#   sudo nixos-rebuild switch --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
   git add -A
 }
 
 update_but_dont_switch() {
   fmt
-  sudo nixos-rebuild boot --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
+    nh os switch $NIX_CONFIG_DIR
+#   sudo nixos-rebuild boot --show-trace --install-bootloader --flake $NIX_CONFIG_DIR#$NIX_CONFIG_NAME
   git add -A
 }
 
@@ -100,4 +102,6 @@ case "$1" in
         exit 1
         ;;
 esac
+
+git restore --staged *private.nix
 

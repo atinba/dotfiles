@@ -39,7 +39,7 @@
     deadnix
     manix
     nh
-    nixfmt
+    # nixfmt
     statix
     vulnix
   ];
