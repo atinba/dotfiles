@@ -1,4 +1,4 @@
-{...}: {
+_: {
   #nixpkgs.overlays = [
   #   (final: prev: {
   #reaper = prev.reaper.overrideAttrs {

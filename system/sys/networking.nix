@@ -1,4 +1,4 @@
-{...}: let
+_: let
   dns_servers = import ./private.nix;
 in {
   networking = {
