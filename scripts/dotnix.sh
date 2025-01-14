@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-NIX_CONFIG_NAME="laptop"
+NIX_CONFIG_NAME="nixos"
 NIX_CONFIG_DIR="/home/atin/.dotfiles"
 
 usage() {
@@ -37,8 +37,10 @@ update_but_dont_switch() {
 }
 
 cleanup() {
-  nix-collect-garbage --delete-older-than 30d
-  sudo nix-collect-garbage --delete-older-than 30d
+  #nix-collect-garbage -d
+  #sudo nix-collect-garbage -d
+  nix-collect-garbage --delete-older-than 15d
+  sudo nix-collect-garbage --delete-older-than 15d
   sudo nix store optimise
 }
 

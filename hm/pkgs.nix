@@ -75,13 +75,13 @@
   home.packages = with pkgs; [
     acpi
     brightnessctl
-    coreutils-full
+    # coreutils-full
     du-dust
     #element-desktop
     fastfetch
     fd
     file
-    gdb
+    # gdb
     hledger
 
     # Hyprrrrrrr
@@ -92,11 +92,11 @@
     keepassxc
     #ledger
     lua-language-server
-    man-pages
-    man-pages-posix
+    # man-pages
+    # man-pages-posix
     nix-output-monitor
     nvd
-    pciutils
+    # pciutils
     python3
     signal-desktop
     stylua
@@ -105,6 +105,7 @@
     vlc
     wl-clipboard
 
+    # For screenshots
     grim
     slurp
     swappy
@@ -122,17 +123,16 @@
     #qemu_full
     #sqlite
     #sparse
-    gcc
 
     # Temp
-    gparted
+    # gparted
     # nyxt
 
     jetbrains-toolbox
     zola
     helix
     cheese
-    rustup
+    # rustup
     #zed-editor
     anki-bin
     nodePackages.tiddlywiki

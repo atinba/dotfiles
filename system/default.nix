@@ -5,18 +5,21 @@
 }: {
   imports = [
     ./hw.nix
-    ./services.nix
-    ./style.nix
-    ./overlays.nix
-    ./audio.nix
-    ./networking.nix
-    ./display.nix
-    #./imperm.nix
+    ./misc.nix
+
+    ./sys/audio.nix
+    ./sys/display.nix
+    ./sys/networking.nix
+    ./sys/other.nix
+
+    ./sys/overlays.nix
+    ./sys/style.nix
+
+    # TODO ./sys/imperm.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
   system.stateVersion = "24.05";
-  # nixpkgs.config.allowUnfree = true;
   boot = {
     loader = {
       systemd-boot = {
@@ -32,29 +35,11 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  users.defaultUserShell = pkgs.fish;
-  users.users.atin = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
-  };
-
-  nix = {
-    optimise.automatic = true;
-    settings = {
-      experimental-features = ["nix-command" "flakes"];
-      trusted-users = ["root" "atin"];
-      allowed-users = ["@wheel"];
-    };
-  };
-
   environment = {
     interactiveShellInit = ''
       export GPG_TTY=$(tty)
     '';
     localBinInPath = true;
-    systemPackages = with pkgs; [
-      config.boot.kernelPackages.perf
-    ];
   };
 
   security = {

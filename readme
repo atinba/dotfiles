@@ -1,11 +1,12 @@
 # Todos
+- code cleanup/minimize
 - update path with scripts path
 - fresh install with impermanence and encryption - test in vm
 - better security - firejail, hardening, agenix
 - build and test using ci (cachix?)
-- change display manager
-- setup lock screen
+- change display manager [done]
+- setup lock screen [done]
 - home cleanup (xdg-ninja)
-- stylix - colorscheme, vim theme issue, disable stuff
+- stylix - colorscheme, vim theme issue, disable stuff 
 - shell - lambda, kitty/foot/alacritty, hm session opt fix (.profile not sourced)
 - change uname to ab (also unify the username var in hm and system), add hashed pwd etc

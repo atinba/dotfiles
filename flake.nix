@@ -30,7 +30,7 @@
   in {
     formatter.x86_64-linux = fmt;
 
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit pkgs;
       modules = [
         # SYS
