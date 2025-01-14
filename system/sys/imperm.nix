@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   environment.persistence."/persist" = {
     enable = true; # NB: Defaults to true, not needed
     hideMounts = true;
