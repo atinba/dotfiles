@@ -32,13 +32,19 @@
   };
 
   environment.systemPackages = with pkgs; [
-    deadnix
+    # deadnix
     manix
     nh
     # nixfmt
-    statix
-    vulnix
+    # statix
+    alejandra
+    heroic
+    gamemode
   ];
+
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.open = false;
 
   virtualisation.libvirtd.enable = true;
 
@@ -56,4 +62,9 @@
   services.spice-vdagentd.enable = true;
 
   # virtualisation.virtualbox.guest.enable = true;
+
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
 }

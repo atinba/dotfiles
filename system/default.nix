@@ -8,7 +8,6 @@
     ./sys/networking.nix
     ./sys/other.nix
 
-    ./sys/overlays.nix
     ./sys/style.nix
 
     # TODO ./sys/imperm.nix

@@ -90,11 +90,6 @@
     # gdb
     hledger
 
-    # Hyprrrrrrr
-    hyprpaper
-    hyprlock
-    hypridle
-
     keepassxc
     #ledger
     lua-language-server
@@ -105,16 +100,11 @@
     # pciutils
     python3
     signal-desktop
+    telegram-desktop
     stylua
-    tealdeer
+    # tealdeer
     unzip
     vlc
-    wl-clipboard
-
-    # For screenshots
-    grim
-    slurp
-    swappy
 
     # C/Kernel Dev
 
@@ -142,7 +132,7 @@
     #zed-editor
     anki-bin
     nodePackages.tiddlywiki
-    alejandra
+
     uv
     go
     gopls
@@ -152,5 +142,9 @@
     xournalpp
     openboard
     gitui
+    upwork
+    #jetbrains.pycharm-professional
+    #jetbrains.clion
+    yt-dlp
   ];
 }
