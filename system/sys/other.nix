@@ -38,18 +38,12 @@
     # nixfmt
     # statix
     alejandra
-    heroic
-    gamemode
   ];
 
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = false;
-
-  virtualisation.libvirtd.enable = true;
+  #virtualisation.libvirtd.enable = true;
 
   # if you use libvirtd on a desktop environment
-  programs.virt-manager.enable = true;
+  #programs.virt-manager.enable = true;
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = ["atin"];
 
@@ -58,8 +52,8 @@
   # virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.virtualbox.guest.dragAndDrop = true;
 
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
+  #services.qemuGuest.enable = true;
+  #services.spice-vdagentd.enable = true;
 
   # virtualisation.virtualbox.guest.enable = true;
 
