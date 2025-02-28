@@ -32,15 +32,10 @@
       enable = true;
       package = pkgs.gitFull;
       aliases = {
-        # c = "commit -v";
-        # cm = "commit -m";
-        # ca = "commit -am";
-        # br = "branch";
-        # co = "checkout";
         st = "status";
-        # d = "diff HEAD";
-        # df = "diff";
-        # dc = "diff --cached";
+        dh = "diff HEAD";
+        df = "diff";
+        dc = "diff --cached";
         coa = "!git add -A && git commit -m";
         cap = ''!f(){ git coa "$*" && git push;};f '';
         lg = "log --pretty=format:'%C(auto)%h%C(blue) %<|(19)%as%C(auto)%d - %s'";
@@ -55,7 +50,7 @@
       };
 
       delta = {
-        enable = false; # TODO: enable
+        enable = true;
         options = {
           side-by-side = "true";
         };

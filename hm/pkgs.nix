@@ -55,10 +55,6 @@
       '';
     };
 
-    kitty = {
-      enable = true;
-    };
-
     neovim = {
       enable = true;
       viAlias = false;
