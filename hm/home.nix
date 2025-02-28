@@ -1,8 +1,4 @@
-{
-  pkgs,
-  stylix,
-  ...
-}: let
+{pkgs, ...}: let
   username = "atin";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
@@ -14,17 +10,6 @@
   ];
 in {
   inherit imports;
-
-  stylix = {
-    targets = {
-      vim.enable = false;
-      nixvim.enable = false;
-      neovim.enable = false;
-      hyprpaper.enable = false;
-      hyprland.enable = false;
-      vscode.enable = false;
-    };
-  };
 
   services = {
     gpg-agent = {

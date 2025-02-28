@@ -142,7 +142,7 @@
     xournalpp
     openboard
     gitui
-    upwork
+    #upwork
     #jetbrains.pycharm-professional
     #jetbrains.clion
     yt-dlp
