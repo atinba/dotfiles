@@ -32,6 +32,7 @@
     gparted
     # pciutils
     firefox
+    nvd
 
     # RUST
     rustup
@@ -39,11 +40,12 @@
     # NIX PROFILE
     appimage-run
     findutils
-    fuse
+    # fuse
     # home-manager-path
-    hydroxide
+    # hydroxide
     imagemagick
     # killall-psmisc
     mlocate
+    ckan
   ];
 }

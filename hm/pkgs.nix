@@ -77,70 +77,25 @@
   home.packages = with pkgs; [
     acpi
     brightnessctl
-    # coreutils-full
     du-dust
-    #element-desktop
     fastfetch
     fd
     file
-    # gdb
-    hledger
-
     keepassxc
-    #ledger
     lua-language-server
-    # man-pages
-    # man-pages-posix
-    nix-output-monitor
-    nvd
-    # pciutils
     python3
     signal-desktop
     telegram-desktop
-    stylua
-    # tealdeer
     unzip
     vlc
 
-    # C/Kernel Dev
-
-    #bc
-    #binutils
-    #bison
-    # clang #-- collision with gcc
-    # clang-tools
-    #coccinelle
-    #gdb
-    #gnumake
-    #qemu_full
-    #sqlite
-    #sparse
-
-    # Temp
-    # gparted
-    # nyxt
-
     jetbrains-toolbox
     zola
-    helix
     cheese
-    # rustup
-    #zed-editor
-    anki-bin
-    nodePackages.tiddlywiki
-
     uv
-    go
-    gopls
     brave
     mpv
-
-    xournalpp
-    openboard
     gitui
-    #upwork
-    #jetbrains.pycharm-professional
-    #jetbrains.clion
     yt-dlp
   ];
 }

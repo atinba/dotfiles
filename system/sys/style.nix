@@ -12,4 +12,12 @@
       nerd-fonts.jetbrains-mono
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    capitaine-cursors
+  ];
+  environment.variables = {
+    XCURSOR_THEME = "Capitaine Cursors";
+    XCURSOR_SIZE = "24";
+  };
 }

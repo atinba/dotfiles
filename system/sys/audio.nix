@@ -18,6 +18,10 @@
     tuxguitar
     transcribe
     pavucontrol
+
+    fretboard
+    metronome
+    solfege
   ];
 
   services = {
