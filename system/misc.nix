@@ -46,6 +46,5 @@
     imagemagick
     # killall-psmisc
     mlocate
-    ckan
   ];
 }

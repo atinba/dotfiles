@@ -22,14 +22,14 @@
   boot.extraModulePackages = [];
 
   fileSystems = {
-    #"/" = {
-    #  device = "none";
-    #  fsType = "tmpfs";
-    #  neededForBoot = true;
-    #  options = ["defaults" "size=40%" "mode=755"];
-    #};
-
     "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      neededForBoot = true;
+      options = ["defaults" "size=40%" "mode=755"];
+    };
+
+    "/persist" = {
       device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
       fsType = "ext4";
       neededForBoot = true;

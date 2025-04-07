@@ -2,6 +2,7 @@
   description = "Dotfiles Flake";
 
   inputs = {
+    impermanence.url = "github:nix-community/impermanence";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     #nixhw.url = "github:NixOS/nixos-hardware/master";
     musnix.url = "github:musnix/musnix";
@@ -14,6 +15,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    impermanence,
     musnix,
     ...
   }: let
@@ -48,6 +50,7 @@
 
         # Extra
         # stylix.nixosModules.stylix
+        impermanence.nixosModules.impermanence
         musnix.nixosModules.musnix
         #nixhw.nixosModules.common-gpu-nvidia-disable
       ];

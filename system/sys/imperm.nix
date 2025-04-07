@@ -1,6 +1,6 @@
 _: {
   environment.persistence."/persist" = {
-    enable = true; # NB: Defaults to true, not needed
+    enable = true;
     hideMounts = true;
     directories = [
       "/nix"
@@ -12,6 +12,9 @@ _: {
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd"
+      "/etc/nixos"
+      "/var/db/dhcpcd"
+      "/var/db/sudo/lectured"
       {
         directory = "/var/lib/colord";
         user = "colord";

@@ -26,7 +26,7 @@
         ndkVersions = ["25.1.8937393" "26.1.10909125"];
         cmakeVersions = ["3.22.1"];
         includeSystemImages = true;
-        systemImageTypes = ["google_apis"];# "google_apis_playstore"];
+        systemImageTypes = ["google_apis"]; # "google_apis_playstore"];
         includeEmulator = true;
         useGoogleAPIs = true;
         extraLicenses = [
