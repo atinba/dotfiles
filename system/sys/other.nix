@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   users.defaultUserShell = pkgs.fish;
-  users.users.atin = {
+  users.users.${uname_me} = {
     isNormalUser = true;
     extraGroups = [
       "audio"
@@ -25,7 +25,7 @@
       ];
       trusted-users = [
         "root"
-        "atin"
+        ${uname_me}
       ];
       allowed-users = ["@wheel"];
     };

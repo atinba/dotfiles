@@ -47,5 +47,6 @@
     imagemagick
     # killall-psmisc
     mlocate
+        navi
   ];
 }

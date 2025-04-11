@@ -5,3 +5,10 @@
 - home cleanup (xdg-ninja)
 - shell - lambda, kitty/foot/alacritty, hm session opt fix (.profile not sourced)
 - change uname to ab (also unify the username var in hm and system), add hashed pwd etc
+
+# FS
+- Btrfs subvolumes
+/
+/nix
+/home
+/persist
