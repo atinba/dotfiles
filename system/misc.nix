@@ -7,11 +7,11 @@
   security.polkit.enable = true;
 
   programs = {
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-      pinentryPackage = pkgs.pinentry-tty;
-    };
+    # gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    #   pinentryPackage = pkgs.pinentry-tty;
+    # };
     fish.enable = true;
   };
 
@@ -22,30 +22,30 @@
 
   environment.systemPackages = with pkgs; [
     #config.boot.kernelPackages.perf
-    binutils
-    coreutils-full
-    gcc
-    gdb
-    gnumake
+    # binutils
+    # coreutils-full
+    # gcc
+    # gdb
+    # gnumake
     man-pages
     man-pages-posix
     gparted
     # pciutils
     #firefox
-    nvd
+    # nvd
     aria2
 
     # RUST
-    rustup
+    # rustup
 
     # NIX PROFILE
-    appimage-run
-    findutils
-    # fuse
-    # home-manager-path
-    # hydroxide
-    imagemagick
-    # killall-psmisc
-    mlocate
+    # appimage-run
+    # findutils
+    # # fuse
+    # # home-manager-path
+    # # hydroxide
+    # imagemagick
+    # # killall-psmisc
+    # mlocate
   ];
 }

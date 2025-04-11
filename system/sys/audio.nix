@@ -11,17 +11,17 @@
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
-    reaper
-    guitarix
-    qjackctl
-    musescore
-    tuxguitar
-    transcribe
+    # reaper
+    # guitarix
+    # qjackctl
+    # musescore
+    # tuxguitar
+    # transcribe
     pavucontrol
 
-    fretboard
-    metronome
-    solfege
+    # fretboard
+    # metronome
+    # solfege
   ];
 
   services = {

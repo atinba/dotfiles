@@ -6,7 +6,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     #nixhw.url = "github:NixOS/nixos-hardware/master";
     musnix.url = "github:musnix/musnix";
-          disko.url = "github:nix-community/disko";
+          disko = {
+            url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+        };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

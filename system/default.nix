@@ -2,6 +2,7 @@
   imports = [
     ./hw.nix
     ./misc.nix
+    ./disks.nix
 
     ./sys/audio.nix
     ./sys/display.nix
@@ -10,7 +11,7 @@
 
     ./sys/style.nix
 
-    ./sys/imperm.nix
+        #./sys/imperm.nix
   ];
 
   time.timeZone = "Asia/Kolkata";

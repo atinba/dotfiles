@@ -21,32 +21,32 @@
   boot.initrd.kernelModules = [];
   boot.extraModulePackages = [];
 
-  fileSystems = {
-    "/" = {
-      device = "none";
-      fsType = "tmpfs";
-      neededForBoot = true;
-      options = ["defaults" "size=40%" "mode=755"];
-    };
+  # fileSystems = {
+  #   "/" = {
+  #     device = "none";
+  #     fsType = "tmpfs";
+  #     neededForBoot = true;
+  #     options = ["defaults" "size=40%" "mode=755"];
+  #   };
 
-    "/persist" = {
-      device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
-      fsType = "ext4";
-      neededForBoot = true;
-    };
+  #   "/persist" = {
+  #     device = "/dev/disk/by-uuid/7335d48f-7978-4bf3-aeda-de1fb500ca99";
+  #     fsType = "ext4";
+  #     neededForBoot = true;
+  #   };
 
-    "/boot/efi" = {
-      device = "/dev/disk/by-uuid/5288-1A02";
-      fsType = "vfat";
-      neededForBoot = true;
-      options = [
-        "fmask=0137"
-        "dmask=0027"
-      ];
-    };
-  };
+  #   "/boot/efi" = {
+  #     device = "/dev/disk/by-uuid/5288-1A02";
+  #     fsType = "vfat";
+  #     neededForBoot = true;
+  #     options = [
+  #       "fmask=0137"
+  #       "dmask=0027"
+  #     ];
+  #   };
+  # };
 
-  swapDevices = [];
+  # swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
