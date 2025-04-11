@@ -1,0 +1,11 @@
+Issues
+- clangd query driver issue
+
+Todos
+- lualine
+- better nvim diff
+- add auto comment
+- term
+- git
+- autopair {[(
+
