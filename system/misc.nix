@@ -21,7 +21,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    config.boot.kernelPackages.perf
+    #config.boot.kernelPackages.perf
     binutils
     coreutils-full
     gcc
@@ -31,8 +31,9 @@
     man-pages-posix
     gparted
     # pciutils
-    firefox
+    #firefox
     nvd
+    aria2
 
     # RUST
     rustup

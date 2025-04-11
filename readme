@@ -1,8 +1,7 @@
 # Todos
-- code cleanup/minimize
 - update path with scripts path
 - fresh install with impermanence and encryption - test in vm
-- better security - firejail, hardening, agenix
+- better security - firejail, hardening, agenix [wont]
 - home cleanup (xdg-ninja)
 - shell - lambda, kitty/foot/alacritty, hm session opt fix (.profile not sourced)
 - change uname to ab (also unify the username var in hm and system), add hashed pwd etc

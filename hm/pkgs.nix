@@ -85,7 +85,6 @@
     lua-language-server
     python3
     signal-desktop
-    telegram-desktop
     unzip
     vlc
 

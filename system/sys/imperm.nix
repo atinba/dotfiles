@@ -23,8 +23,8 @@ _: {
       }
     ];
     files = [
-      "/etc/machine-id"
-      "/etc/adjtime"
+      #"/etc/machine-id"
+      #"/etc/adjtime"
       {
         file = "/var/keys/secret_file";
         parentDirectory = {
