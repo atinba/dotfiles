@@ -6,6 +6,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     #nixhw.url = "github:NixOS/nixos-hardware/master";
     musnix.url = "github:musnix/musnix";
+          disko.url = "github:nix-community/disko";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +18,7 @@
     home-manager,
     impermanence,
     musnix,
+        disko,
     ...
   }: let
     system = "x86_64-linux";
@@ -26,7 +28,7 @@
         allowUnfree = true;
       };
     };
-    user = "atin";
+    uname_me = "atin";
 
     fmt = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   in {
@@ -43,13 +45,14 @@
         {
           home-manager = {
             useGlobalPkgs = true;
-            users.${user}.imports = [./hm/home.nix];
+            users.${uname_me}.imports = [./hm/home.nix];
             backupFileExtension = "hm-backup";
           };
         }
 
         # Extra
         # stylix.nixosModules.stylix
+        disko.nixosModules.disko
         impermanence.nixosModules.impermanence
         musnix.nixosModules.musnix
         #nixhw.nixosModules.common-gpu-nvidia-disable
