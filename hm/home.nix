@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  username = "atin";
+  username = "ab";
   homeDirectory = "/home/${username}";
   configHome = "${homeDirectory}/.config";
   stateVersion = "24.05";

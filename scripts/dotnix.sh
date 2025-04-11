@@ -4,7 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 NIX_CONFIG_NAME="nixos"
-NIX_CONFIG_DIR="/home/atin/.dotfiles"
+NIX_CONFIG_DIR="/home/ab/.dotfiles"
 
 # Usage function
 usage() {

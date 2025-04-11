@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      ssd = {
         type = "disk";
         device = "/dev/nvme0n1";
         content = {
@@ -26,7 +26,7 @@
               label = "luks";
               content = {
                 type = "luks";
-                name = "cryptroot";
+                name = "crypted";
                 extraOpenArgs = [
                   "--allow-discards"
                   "--perf-no_read_workqueue"

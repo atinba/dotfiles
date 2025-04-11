@@ -3,15 +3,15 @@
 
   inputs = {
     impermanence.url = "github:nix-community/impermanence";
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     #nixhw.url = "github:NixOS/nixos-hardware/master";
     musnix.url = "github:musnix/musnix";
-          disko = {
-            url = "github:nix-community/disko";
+    disko = {
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
-        };
+    };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -21,7 +21,7 @@
     home-manager,
     impermanence,
     musnix,
-        disko,
+    disko,
     ...
   }: let
     system = "x86_64-linux";
@@ -31,7 +31,7 @@
         allowUnfree = true;
       };
     };
-    uname_me = "atin";
+    uname_me = "ab";
 
     fmt = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   in {

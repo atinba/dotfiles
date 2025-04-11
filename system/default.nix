@@ -11,7 +11,7 @@
 
     ./sys/style.nix
 
-        #./sys/imperm.nix
+    #./sys/imperm.nix
   ];
 
   time.timeZone = "Asia/Kolkata";
@@ -24,11 +24,11 @@
       };
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
+        efiSysMountPoint = "/boot";
       };
       timeout = 0;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
   };
 
   environment = {

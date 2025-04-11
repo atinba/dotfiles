@@ -14,7 +14,7 @@
     htop.enable = true;
     ripgrep.enable = true;
     tealdeer.enable = true;
-    # vscode.enable = true;
+    vscode.enable = true;
     wofi.enable = true;
     zathura.enable = true;
 
@@ -65,7 +65,6 @@
       enable = true;
       settings = {
         # FF Sync
-        "identity.fxaccounts.enabled" = true;
         "general.useragent.compatMode.firefox" = true;
         # Compact mode
         "browser.compactmode.show" = true;
@@ -75,26 +74,26 @@
   };
 
   home.packages = with pkgs; [
-    # acpi
-    # brightnessctl
+    acpi
+    brightnessctl
     du-dust
     fastfetch
-    # fd
-    # file
+    fd
+    file
     keepassxc
     # lua-language-server
-    # python3
+    python3
     # signal-desktop
-    # unzip
-    # vlc
+    unzip
+    vlc
 
     # jetbrains-toolbox
     # zola
     # cheese
     # uv
     # brave
-    # mpv
-    # gitui
-    # yt-dlp
+    mpv
+    gitui
+    yt-dlp
   ];
 }
